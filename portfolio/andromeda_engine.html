@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with JohnDoe landing page.">
     <meta name="author" content="Devcrud">
@@ -9,61 +10,154 @@
     <!-- font icons -->
     <link rel="stylesheet" href="../assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + JohnDoe main styles -->
-	<link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">      
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
     <nav class="navbar sticky-top affix navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
-        <div class="container">
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="navbar_container">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="../index.html#home" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../index.html#about" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../index.html#resume" class="nav-link">Resume</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav brand">
-                    <!-- <img src="../assets/imgs/avatar.jpg" alt="" class="brand-img"> -->
-                    <li class="brand-txt">
-                        <h5 class="brand-title">Héctor Ochando Casañ</h5>
-                        <div class="brand-subtitle">Software Engineer</div>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="../index.html#portfolio" class="nav-link">Portfolio</a>
-                    </li>                   
-                    <li class="nav-item last-item">
-                        <a href="../index.html#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
+                <div class="navbar_flex">
+                    <div class="navbar_display">
+                        <ul class="navbar-nav brand">
+                            <img src="../assets/imgs/avatar.jpg" alt="" class="brand-img">
+                            <li class="brand-txt">
+                                <h5 class="brand-title">Héctor Ochando Casañ</h5>
+                                <div class="brand-subtitle">Software Engineer</div>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <a href="hector_ochando_CV.pdf" download
+                                class="btn btn-primary btn-rounded navbar_cv_button" target="_blank"><i
+                                    class="ti-download pr-2"></i>CV</a>
+                            <ul class="social-icons aling-center">
+                                <li class="social-item"><a class="social-link"
+                                        href="https://www.linkedin.com/in/hector-ochando/" target="_blank"><i
+                                            class="ti-linkedin" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a class="social-link" href="https://github.com/ochandoca"
+                                        target="_blank"><i class="ti-github" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="navbar_nav_buttons">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"></li>
+                            <a href="../index.html#home" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item"></li>
+                            <a href="../index.html#portfolio" class="nav-link">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../index.html#about" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item"></li>
+                            <a href="../index.html#resume" class="nav-link">Resume</a>
+                            </li>
+                            <li class="nav-item last-item">
+                                <a href="../index.html#contact" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     </nav>
-    <div class="container-fluid portfolio-container">
-        <h1>Andromeda Engine</h1>
-        <p>Developed an engine written in C++ with DirectX 11 and OpenGL as render backends. Working with APIs such as PhysX and OpenAL. More info here.
-        </p>
-        <div class="contenedor_iframe">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/RMD44mjzoPU?si=WapAXF41vV-8cK7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>        
-    </div>
+    <article class="project-container">
+        <article class="project-section">
+            <div class="project-section-title-container">
+                <h1>Andromeda Engine</h1>
+                <div class="project-section-skill-container">
+                    <img src="../assets/imgs/logos/c_plusplus.png" alt="C++">
+                    <img class="project-skill-opengl-logo" src="../assets/imgs/logos/opengl.png" alt="OpenGL">
+                    <img src="../assets/imgs/logos/directx11.png" alt="DirectX11">
+                    <img src="../assets/imgs/logos/xbox_1.png" alt="XBox">
+                    <img class="project-skill-openal-logo" src="../assets/imgs/logos/openal.png" alt="OpenAL">
+                    <img class="project-skill-physx-logo" src="../assets/imgs/logos/nvidia_physx.png" alt="OpenAL">
+                </div>
+            </div>
+            <h3>Resume</h3>
+            <hr>
+            <p>
+                Andromeda Engine is a graphics and physics development engine, written in C++, that uses DirectX 11 and
+                OpenGL as rendering backends. These two popular graphics APIs enable broad compatibility and performance
+                on both Windows and cross-platform systems. The engine's flexibility is further enhanced by the
+                integration of other advanced APIs such as PhysX, for accurate and realistic physics simulation, and
+                OpenAL, which provides a high-quality three-dimensional sound system.
+            </p>
+            <p>
+                In addition to its desktop focus, Andromeda Engine has been successfully ported to Xbox through the use
+                of the Universal Windows Platform (UWP).
+            </p>
+            <div class="project-section-link-container">
+                <div class="project-section-link">
+
+                    <a href="#video">
+                        Showcase
+                        <img src="../assets/imgs/logos/youtubr.png" alt="YouTube">
+                    </a>
+                </div>
+                <div class="project-section-link">
+                    <a href="https://github.com/ochandoca/AndromedaEngine/" target="_blank">
+                        Source Code
+                        <img src="../assets/imgs/logos/github.png" alt="GitHub">
+                    </a>
+                </div>
+            </div>
+        </article>
+        <article class="project-section">
+            <h2>Engine Features</h2>
+            <hr>
+            <p>
+                Andromeda Engine is a development engine that offers advanced features for creating graphics, lighting
+                and sound effects. With various rendering options, dynamic lighting and shadows, as well as integration
+                with Nvidia PhysX for physics and OpenAL for 3D sound.
+            </p>
+            <p>
+                Here is a list of the implemented features:
+            </p>
+            <ul>
+                <li>Rendering</li>
+                <ul>
+                    <li>Forward Rendering</li>
+                    <li>Deferred Rendering</li>
+                    <li>Deferred Rendering with Physically Based Rendering (PBR)</li>
+                </ul>
+                <li>Lighting</li>
+                <ul>
+                    <li>Ambient Light</li>
+                    <li>Directional Light</li>
+                    <li>Point Light</li>
+                    <li>Spot Light</li>
+                </ul>
+                <li>Shadow Mapping with all lights</li>
+                <li>Nvidia PhysX integrated</li>
+                <li>Sound integrated with OpenAL</li>
+                <li>Multithreading</li>
+            </ul>
+        </article>
+        <article class="project-section">
+            <iframe id="video" src="https://www.youtube.com/embed/RMD44mjzoPU?si=inU72p-bw9TZRlCE"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </article>
+    </article>
     <footer class="footer py-3 footer_portfolio">
         <div class="container text-center">
             <p class="small mb-0 text-light">
-                &copy; <script>document.write(new Date().getFullYear())</script> Héctor Ochando Casañ</span></a> 
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> Héctor Ochando Casañ</span></a>
             </p>
         </div>
     </footer>
 
-	<!-- core  -->
+    <!-- core  -->
     <script src="../assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 
@@ -77,4 +171,5 @@
     <!-- <script src="../assets/js/app.js"></script> -->
 
 </body>
+
 </html>

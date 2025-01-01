@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Héctor Ochando landing page.">
-    <meta name="author" content="Devcrud">
+    <meta name="author" content="Hector Ochando">
     <title>Héctor Ochando Landing page</title>
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
@@ -30,8 +30,9 @@
                 <h4 class="header-subtitle">Hello, I am</h4>
                 <h1 class="header-title">Héctor Ochando</h1>
                 <h6 class="header-mono">Software Engineer</h6>
-                <a href="hector_ochando_CV.pdf" download class="btn btn-primary btn-rounded"><i
-                        class="ti-download pr-2"></i>Download Resume</a>
+                <!-- <a href="hector_ochando_CV.pdf" download class="btn btn-primary btn-rounded">
+                    <i class="ti-download pr-2"></i>Download Resume
+                </a> -->
             </div>
         </div>
     </header>
@@ -53,16 +54,21 @@
                             </li>
                         </ul>
                         <ul class="navbar-nav ml-auto">
-                            <a href="hector_ochando_CV.pdf" download
-                                class="btn btn-primary btn-rounded navbar_cv_button" target="_blank"><i
-                                    class="ti-download pr-2"></i>CV</a>
-                            <ul class="social-icons aling-center">
-                                <li class="social-item"><a class="social-link"
-                                        href="https://www.linkedin.com/in/hector-ochando/" target="_blank"><i
-                                            class="ti-linkedin" aria-hidden="true"></i></a></li>
-                                <li class="social-item"><a class="social-link" href="https://github.com/ochandoca"
-                                        target="_blank"><i class="ti-github" aria-hidden="true"></i></a></li>
-                            </ul>
+                            <li>
+                                <a href="hector_ochando_CV.pdf" download
+                                    class="btn btn-primary btn-rounded navbar_cv_button" target="_blank"><i
+                                        class="ti-download pr-2"></i>CV
+                                </a>
+                            </li>
+                            <li>
+                                <ul class="social-icons aling-center">
+                                    <li class="social-item"><a class="social-link"
+                                            href="https://www.linkedin.com/in/hector-ochando/" target="_blank"><i
+                                                class="ti-linkedin" aria-hidden="true"></i></a></li>
+                                    <li class="social-item"><a class="social-link" href="https://github.com/ochandoca"
+                                            target="_blank"><i class="ti-github" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="navbar_nav_buttons">
@@ -93,7 +99,7 @@
     <!-- Portfolio Section -->
     <section class="section bg-custom-gray" id="portfolio">
         <div class="container">
-            <h1 class="mb-5"><span class="text-danger">My</span> Portfolio</h1>
+            <h1 class="mb-5 portfolio_title"><span class="text-danger">My</span> Portfolio</h1>
             <div class="portfolio">
                 <div class="filters">
                     <a href="#" data-filter=".new" class="active">
@@ -114,48 +120,44 @@
                     <a href="#" data-filter=".others">
                         Others
                     </a>
-                </div>
+                </div>                
                 <div class="portfolio-container">
                     <div class="col-md-6 col-lg-4 new unreal ia">
                         <div class="portfolio-item">
-                            <img src="assets/imgs/shelly_manor.jpg" class="img-fluid" alt="Shelley Manor">
-                            <div class="content-holder">
-                                <a class="img-popup" href="portfolio/shelley_manor.html"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Shelly Manor</h6>
-                                    <p class="subtitle">Developing Shelly Manor game with Unreal Engine 5 and C++.
-                                        Developed a modular camera system and other gameplay features.
-                                        Work focused on artificial intelligence. <a class="white font-weight-bold"
-                                            href="portfolio/shelley_manor.html" target="_blank">More info here.</a></p>
+                            <a href="portfolio/shelley_manor.html">
+                                <div class="project-card">
+                                    <div class="project-card-title-container-row">
+                                        <h6>Shelley Manor</h6>
+                                        <div class="projecr-card-skill-container">
+                                            <img src="assets/imgs/logos/c_plusplus.png" alt="C++">
+                                            <img src="assets/imgs/logos/unreal_engine.png" alt="Unreal Engine">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <img src="assets/imgs/shelly_manor.jpg" alt="Shelley Manor">
                                 </div>
-                            </div>
-                            <div class="tecnologias">
-                                <span>C++</span>
-                                <span>Unreal Engine</span>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 new grafics_programming">
                         <div class="portfolio-item">
-                            <img src="assets/imgs/web-1.jpg" class="img-fluid" alt="Andromeda Engine">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/web-1.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Andromeda Engine</h6>
-                                    <p class="subtitle">Developed an engine written in C++ with DirectX 11 and OpenGL as
-                                        render backends. Working with APIs such as PhysX and OpenAL. <a
-                                            class="white font-weight-bold" href="portfolio/andromeda_engine.html"
-                                            target="_blank">More info here</a>.</p>
+                            <a href="portfolio/andromeda_engine.html">
+                                <div class="project-card">
+                                    <div class="project-card-title-container-column">
+                                        <h6>Andromeda Engine</h6>
+                                        <div class="projecr-card-skill-container">
+                                            <img src="assets/imgs/logos/c_plusplus.png" alt="C++">
+                                            <img src="assets/imgs/logos/opengl.png" alt="OpenGL"
+                                                class="project-card-opengl-logo">
+                                            <img src="assets/imgs/logos/directx11.png" alt="DirectX11">
+                                            <img src="assets/imgs/logos/xbox_1.png" alt="XBox">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <img src="assets/imgs/projects/andromeda_engine/AndromedaEngine_Picture.jpg"
+                                        alt="Shelley Manor">
                                 </div>
-                            </div>
-                            <div class="tecnologias">
-                                <span>C++</span>
-                                <span>OpenGL</span>
-                                <span>GLSL</span>
-                                <span>DirectX 11</span>
-                                <span>HLSL</span>
-                                <span>XBOX</span>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 new ia unity">
@@ -176,148 +178,7 @@
                                 <span>Unity</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 new others">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/advertising-2.jpg" class="img-fluid" alt="Branding">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/advertising-2.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">ADTs</h6>
-                                    <p class="subtitle">Developed an API written in C / C++ composed by the following
-                                        ADT:
-                                        Memory Node, Vector, List, Double Linked List, Movable Head Vector, Circular
-                                        Vector,
-                                        Circular List, Circular Double Linked List, Queue, Stack. API severely
-                                        influenced by
-                                        the C++ STL.<a class="white font-weight-bold" href="portfolio/adts.html">More
-                                            info
-                                            here.</a></p>
-                                </div>
-                            </div>
-                            <div class="tecnologias">
-                                <span>C</span>
-                                <span>C++</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 new others">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/web-4.jpg" class="img-fluid" alt="Branding">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/web-4.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Memory Manager</h6>
-                                    <p class="subtitle">Developed a custom Memory Manager, following the arena allocator
-                                        pattern which I programmed in C to manage dynamic memory allocation and catch
-                                        any
-                                        memory leak.<a class="white font-weight-bold"
-                                            href="portfolio/memory_manager.html">More info here.</a></p>
-                                </div>
-                            </div>
-                            <div class="tecnologias">
-                                <span>C</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 new unity">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/advertising-1.jpg" class="img-fluid" alt="Branding">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/advertising-1.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Balance Board Game</h6>
-                                    <p class="subtitle">A game created using the wii balance board as the only input.
-                                        Working with Unity and C#. <a class="white font-weight-bold"
-                                            href="portfolio/balance_board.html">More info here.</a></p>
-                                </div>
-                            </div>
-                            <div class="tecnologias">
-                                <span>Unity</span>
-                                <span>C#</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 new grafics_programming">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/web-3.jpg" class="img-fluid" alt="Branding">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/web-3.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">OpenGL demo</h6>
-                                    <p class="subtitle">First time using any render API and reimplementing the backend
-                                        of a
-                                        tiny custom render library. And creating a demo to show the…<a
-                                            class="white font-weight-bold" href="portfolio/opengl_demo.html">More info
-                                            here.</a></p>
-                                </div>
-                            </div>
-                            <div class="tecnologias">
-                                <span>C++</span>
-                                <span>OpenGL</span>
-                                <span>GLSL</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 new Unity">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/advertising-3.jpg" class="img-fluid" alt="Advertising 3">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/advertising-3.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Mobile Game</h6>
-                                    <p class="subtitle">An endless runner game inspired by Subway Surfers. Developed
-                                        with
-                                        Unity and C# with mobile as target.<a class="white font-weight-bold"
-                                            href="portfolio/mobile_game.html">More info here.</a></p>
-                                </div>
-                            </div>
-                            <div class="tecnologias">
-                                <span>Unity</span>
-                                <span>C#</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 new others">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/advertising-4.jpg" class="img-fluid" alt="Advertising 4">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/advertising-4.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Data Base Visualizer</h6>
-                                    <p class="subtitle">A database visualizer and field editor written in C++ with a
-                                        custom
-                                        framework.<a class="white font-weight-bold" href="portfolio/data_base.html">More
-                                            info here.</a></p>
-                                </div>
-                            </div>
-                            <div class="tecnologias">
-                                <span>C++</span>
-                                <span>ImGui</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 new others">
-                        <div class="portfolio-item">
-                            <img src="assets/imgs/branding-1.jpg" class="img-fluid" alt="Branding">
-                            <div class="content-holder">
-                                <a class="img-popup" href="assets/imgs/branding-1.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Several ASM Demos</h6>
-                                    <p class="subtitle">Voxel Raytracer terrain (<a href="" class="white">link here</a>)
-                                        and
-                                        Landscape terrain based on a height map. Programmed in C with an SDL.<a
-                                            class="white font-weight-bold" href="portfolio/several_asm.html">More info
-                                            here.</a></p>
-                                </div>
-                            </div>
-                            <div class="tecnologias">
-                                <span>SDL</span>
-                                <span>C</span>
-                                <span>ASM</span>
-                            </div>
-                        </div>
-                    </div>
+                    </div>                   
                 </div>
             </div>
         </div>
