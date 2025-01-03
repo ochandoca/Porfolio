@@ -5021,7 +5021,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
-  list-style: none;
+  list-style: none; 
 }
 
 .navbar-nav .nav-link {
@@ -5062,6 +5062,25 @@ input[type="button"].btn-block {
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prueba {
+  display: flex;
+  flex-direction: row;
+}
+
+.prueba2 {
+  display: none;
+}
+
+@media (min-width: 500px){
+  .prueba2 {
+    display: flex;
+  }
 }
 
 .navbar-toggler:hover,
@@ -5410,7 +5429,7 @@ input[type="button"].btn-block {
 
 .navbar-light .navbar-toggler {
   color: rgba(0, 0, 0, 0.8);
-  border-color: rgba(0, 0, 0, 0.1);
+  /* border-color: rgba(0, 0, 0, 0.1); */
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -12921,12 +12940,17 @@ a.white:hover {
 .navbar_nav_buttons {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  justify-self: right;
+  flex-wrap: nowrap;  
   align-content: center;
-  position: absolute;
-  right: 0;
-  margin-right: 25px;
+}
+
+@media (min-width: 500px) {
+  .navbar_nav_buttons {
+    justify-self: right;
+    position: absolute;
+    right: 0;
+    margin-right: 25px;
+  }
 }
 
 .navbar_flex {
