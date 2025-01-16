@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with JohnDoe landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Héctor Ochando Landing page</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="../assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + JohnDoe main styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <nav class="navbar sticky-top affix navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+        <div class="navbar_container">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar_flex">
+                    <div class="navbar_display">
+                        <ul class="navbar-nav brand">
+                            <img src="../assets/imgs/avatar.jpg" alt="" class="brand-img">
+                            <li class="brand-txt">
+                                <h5 class="brand-title">Héctor Ochando Casañ</h5>
+                                <div class="brand-subtitle">Software Engineer</div>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <a href="hector_ochando_CV.pdf" download
+                                class="btn btn-primary btn-rounded navbar_cv_button" target="_blank"><i
+                                    class="ti-download pr-2"></i>CV</a>
+                            <ul class="social-icons aling-center">
+                                <li class="social-item"><a class="social-link"
+                                        href="https://www.linkedin.com/in/hector-ochando/" target="_blank"><i
+                                            class="ti-linkedin" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a class="social-link" href="https://github.com/ochandoca"
+                                        target="_blank"><i class="ti-github" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="navbar_nav_buttons">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"></li>
+                            <a href="../index.html#home" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item"></li>
+                            <a href="../index.html#portfolio" class="nav-link">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../index.html#about" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item"></li>
+                            <a href="../index.html#resume" class="nav-link">Resume</a>
+                            </li>
+                            <li class="nav-item last-item">
+                                <a href="../index.html#contact" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <article class="project-container">
+        <article class="project-section">
+            <div class="project-section-title-container">
+                <h1>Ray Tracing in DirectX12</h1>
+                <div class="project-section-skill-container">
+                    <img src="../assets/imgs/logos/c_plusplus.png" alt="C++">
+                    <img src="../assets/imgs/logos/directx12.png" alt="DirectX12">
+                </div>
+            </div>
+            <h3>Resume</h3>
+            <hr>
+            <p>
+                This project is an implementation of ray tracing using the DirectX 12 API, designed to explore
+                and demonstrate
+                modern graphics rendering techniques. The demo features lighting effects such as shadows and
+                reflections, taking
+                advantage of accelerated hardware to maximise performance.
+            </p>
+            <p>
+                Developed in C++ with SDL for window management and tools such as Premake5, Visual Studio and NVIDIA's
+                Nsight.
+            </p>
+            <div class="project-section-link-container">
+                <div class="project-section-link">
+
+                    <a href="#video">
+                        Showcase
+                        <img src="../assets/imgs/logos/youtubr.png" alt="YouTube">
+                    </a>
+                </div>
+                <div class="project-section-link">
+                    <a href="https://github.com/ochandoca/AndromedaEngine/" target="_blank">
+                        Source Code
+                        <img src="../assets/imgs/logos/github.png" alt="GitHub">
+                    </a>
+                </div>
+            </div>
+        </article>
+        <article class="project-section">
+            <h2>Demo Features</h2>
+            <hr>
+            <p>
+                This demo provides a fully rendered scene with ray tracing, two points of light and multiple meshed
+                objects, such as
+                spheres and cubes, plus this demo contains a fly camera to observe the scene from various points.
+            </p>
+            <p>
+                Here is a list of the implemented features:
+            </p>
+            <ul>
+                <li>Lighting</li>
+                <ul>
+                    <li>Point Light</li>
+                </ul>
+                <li>Shadows</li>
+                <li>Reflections</li>
+            </ul>
+        </article>
+        <article class="project-section">
+            <h2>Lighting</h2>
+            <hr>
+            <p>
+                This demo uses exclusively point lights because of their easy integration with rendering systems based
+                on the Phong
+                lighting model. Point lights emit light from a specific point in all directions, allowing light sources
+                such as light
+                bulbs or candles to be simulated efficiently. In this context, the Phong model is used to calculate both
+                diffuse and
+                specular lighting, achieving a balance between visual realism and computational performance. This choice
+                simplifies the
+                rendering pipeline while providing a sufficient graphical environment to demonstrate the capabilities of
+                the implemented
+                ray tracing system.
+            </p>
+        </article>
+        <article class="project-section">
+            <h2>Shadows</h2>
+            <hr>
+            <p>
+                The shadow calculation in this demo follows a straightforward but efficient approach. To determine
+                whether an object is
+                illuminated, a ray is cast from the object's position towards the light source. This beam, called a
+                ‘shadow ray,’ checks
+                if there is any intersection with another object between the point and the light.
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        Unobstructed case: If the ray does not encounter any obstacles in its path, the light is
+                        considered
+                        to hit the object
+                        directly. In this case, the contribution of diffuse and specular light is calculated and added
+                        to
+                        the Phong illumination
+                        model, generating a realistic appearance including bright reflections and soft shading depending
+                        on
+                        the material of the
+                        object and the position of the light.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Obstructed case: If the beam intercepts any object in the path, the light is determined to be
+                        blocked, and therefore no
+                        light contribution is added from that source. This mechanism simulates hard and sharp shadows,
+                        which
+                        are characteristic
+                        of point lights.
+                    </p>
+                </li>
+            </ul>
+        </article>
+        <article class="project-section">
+            <h2>Reflections</h2>
+            <hr>
+            <p>
+                The shadow calculation in this demo follows a straightforward but efficient approach. To determine
+                whether an object is
+                illuminated, a ray is cast from the object's position towards the light source. This beam, called a
+                ‘shadow ray,’ checks
+                if there is any intersection with another object between the point and the light.
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        Unobstructed case: If the ray does not encounter any obstacles in its path, the light is
+                        considered
+                        to hit the object
+                        directly. In this case, the contribution of diffuse and specular light is calculated and added
+                        to
+                        the Phong illumination
+                        model, generating a realistic appearance including bright reflections and soft shading depending
+                        on
+                        the material of the
+                        object and the position of the light.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Obstructed case: If the beam intercepts any object in the path, the light is determined to be
+                        blocked, and therefore no
+                        light contribution is added from that source. This mechanism simulates hard and sharp shadows,
+                        which
+                        are characteristic
+                        of point lights.
+                    </p>
+                </li>
+            </ul>
+        </article>
+        <article class="project-section">
+            <h2>Showcase</h2>
+            <hr>
+            <iframe id="video" src="https://www.youtube.com/embed/7EB29FBWpq0?si=KvCr1XfDYfy5Jdss"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </article>
+    </article>
+    <footer class="footer py-3 footer_portfolio">
+        <div class="container text-center">
+            <p class="small mb-0 text-light">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> Héctor Ochando Casañ</span></a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- core  -->
+    <script src="../assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+    <!-- <script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script> -->
+
+    <!-- Isotope  -->
+    <!-- <script src="assets/vendors/isotope/isotope.pkgd.js"></script>     -->
+
+    <!-- App js -->
+    <!-- <script src="../assets/js/app.js"></script> -->
+
+</body>
+
+</html>
