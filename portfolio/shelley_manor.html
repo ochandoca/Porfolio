@@ -154,31 +154,35 @@
             <p>
                 The transition parameters are stored in a structure similar to this one:
             </p>
-            <div class="code-block-container">
-                <div class="is-code-toggle-block" target-block-id="camera-transition-params-code-sample">
-                    <div class="code-toggle-block-icon">
-                        >
-                    </div>
-                    <div class="code-toggle-block-text">
-                        Camera Transition Params Description
-                    </div>
-                </div>
-                <div class="code-block code-block-hidden" id="camera-transition-params-code-sample"
-                    block-expanded="false">
-                    <pre><code>
-  <mark class="has-cpp-keyword-color">struct</mark><mark class="has-cpp-type-color">CameraTransitionParams</mark>
-  {
-    <mark class="has-cpp-type-color">float</mark> TransitionTime;               <mark class="has-cpp-comments-color">/** Duration of the transition */</mark>
-    <mark class="has-cpp-type-color">CameraBlendFunction</mark> BlendFunction;  <mark class="has-cpp-comments-color">/** Blend Function */</mark>
-    <mark class="has-cpp-type-color">bool</mark> bFade;                         <mark class="has-cpp-comments-color">/** Enable and Disable Fade */</mark>
-    <mark class="has-cpp-type-color">float</mark> FadeTime;                     <mark class="has-cpp-comments-color">/** Full Fade time */</mark>
-    <mark class="has-cpp-type-color">float</mark> FadeOutTime;                  <mark class="has-cpp-comments-color">/** Fade out time */</mark>
-    <mark class="has-cpp-type-color">float</mark> FadeInTime;                   <mark class="has-cpp-comments-color">/** Fade in time */</mark>
-  };
-</code>
-</pre>
-                </div>
-            </div>
+    <!-- accordion -->
+            <ul class="accordion_camera">
+                <li>
+                    <input type="checkbox" name="accordion" id="accordion_camera_label">
+                    <label for="accordion_camera_label">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                          </svg>
+                           Camera Transition Params Description</label>
+                    <div class="accordion_content">
+    <div>
+        <pre>
+        <code>
+        <mark class="has-cpp-keyword-color">struct</mark><mark class="has-cpp-type-color">CameraTransitionParams</mark>
+        {
+            <mark class="has-cpp-type-color">float</mark> TransitionTime;               <mark class="has-cpp-comments-color">/** Duration of the transition */</mark>
+            <mark class="has-cpp-type-color">CameraBlendFunction</mark> BlendFunction;  <mark class="has-cpp-comments-color">/** Blend Function */</mark>
+            <mark class="has-cpp-type-color">bool</mark> bFade;                         <mark class="has-cpp-comments-color">/** Enable and Disable Fade */</mark>
+            <mark class="has-cpp-type-color">float</mark> FadeTime;                     <mark class="has-cpp-comments-color">/** Full Fade time */</mark>
+            <mark class="has-cpp-type-color">float</mark> FadeOutTime;                  <mark class="has-cpp-comments-color">/** Fade out time */</mark>
+            <mark class="has-cpp-type-color">float</mark> FadeInTime;                   <mark class="has-cpp-comments-color">/** Fade in time */</mark>
+        };
+        </code>
+        </pre>
+    </div>    
+                    </div>    
+                </li>
+            </ul>
+        <!-- fin accordion -->     
         </article>
         <article class="project-section">
             <h2>Showcase</h2>
@@ -201,7 +205,7 @@
     <!-- core  -->
     <script src="../assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-    <script src="../assets/js/utils.js"></script>
+    
     <!-- bootstrap 3 affix -->
     <!-- <script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script> -->
 

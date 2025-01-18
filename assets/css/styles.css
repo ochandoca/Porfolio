@@ -13055,11 +13055,12 @@ a.white:hover {
 .project-section {
   color: white;
   background-color: #1f1f1f;
-  width: 80%;
+  width: 100%;
   height: 100%;
   padding: 15px;
   border-radius: 15px;
 }
+
 
 .project-section-title-container {
   display: flex;
@@ -13070,6 +13071,9 @@ a.white:hover {
 }
 
 @media (min-width: 768px) {
+  .project-section{
+    width: 80%;
+  }
   .project-section-title-container {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -13208,6 +13212,80 @@ a.white:hover {
   color: #529949;
 }
 
+/* Accordion Camera */
+.accordion_camera {
+  background-color: #2f2f2f;
+  margin: 0;
+  padding:0 20px 0 15px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(248, 92, 112, 1);
+
+  & li {
+    list-style: none;
+    width: 100%;
+    padding: 10px 0;
+
+    & > input[type="checkbox"] {
+      display: none;
+    }
+
+    & label {
+     
+      margin: 0;
+      line-height: 1;     
+      cursor: pointer;
+
+      & svg {
+        width: 30px;
+        height: 30px;
+        padding-right: 10px;
+        transition: transform 500ms;
+      }
+    }    
+  }
+}
+
+.accordion_camera input[type="checkbox"]:checked ~ .accordion_content {
+  grid-template-rows: 1fr;
+}
+
+.accordion_camera input[type="checkbox"]:checked ~ label svg {  
+  transform: rotate(90deg) translateX(5px);
+}
+
+.accordion_content {
+  background-color: #2f2f2f;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 500ms;
+
+  & > div {
+    overflow: hidden;
+  }
+}
+
+.accordion_content pre {
+  background-color: #2f2f2f;  
+  line-height: 1.6;
+  font-size: 17px;
+  /* margin: 0px; */
+  /* border-radius: 0px 0px 10px 10px; */
+  border: 0; 
+}
+
+.accordion_content pre code {
+  color: white;
+  /* background-color: #2f2f2f; */
+}
+
+.accordion_content pre code mark {
+  background-color: #2f2f2f;
+  text-decoration: none;
+  size: 0;
+}
+
+/* Accordion Camera End */
+
 .code-block-container {
   display: flex;
   flex-direction: column;
@@ -13269,157 +13347,3 @@ a.white:hover {
   text-decoration: none;
   size: 0;
 }
-
-/*
-.project-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.project-title-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.project-title {
-  background-color: #1f1f1f;
-  padding: 25px;
-  color: white;
-  border-radius: 35px;
-}
-
-.project-introduction-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: max-content;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-@media (min-width: 992px) {
-  .project-introduction-container {
-    flex-direction: row;
-  }
-}
-
-.project-introduction-text {
-  background-color: #1f1f1f;
-  max-width: 100%;
-  padding: 20px;
-  border-radius: 25px;
-  text-align: left;
-}
-
-@media (min-width: 992px) {
-  .project-introduction-text {
-    max-width: 69.2%;
-  }
-}
-
-.project-details-title {
-  color: white;
-  margin-left: 20px;
-}
-
-.project-details-divider {
-  color: white;
-  background-color: white;
-  width: 100%;
-}
-
-.project-introduction-skills-container {
-  background-color: #1f1f1f;
-  max-width: 100%;
-  padding: 20px;
-  border-radius: 25px;
-}
-
-@media (min-width: 992px) {
-  .project-introduction-skills-container {
-    width: 29.2%;
-  }
-}
-
-.project-skill-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: left;
-  gap: 15px;
-}
-
-.project-skill {
-  background-color: #F85C70;
-  padding: 15px;
-  border-radius: 15px;
-  width: fit-content;
-  height: fit-content;
-}
-
-.project-skill-image {
-  width: 50px;
-}
-
-.project-details-text-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-}
-
-.project-details-text {
-  color: white;
-}
-
-.project-details-socialmedia-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.project-details-socialmedia-link {
-  background-color: #F85C70;
-  color: white;
-  padding: 10px;
-  border-radius: 15px;
-}
-
-.project-details-socialmedia-link img {
-  width: 40px;
-}
-
-.project-description-container {
-  background-color: #1f1f1f;
-  width: 100%;
-  border-radius: 25px;
-}
-
-.project-description-section {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-
-.project-description-text {
-  color: white;
-}
-
-.project-video-container {
-  background-color: #1f1f1f;
-  padding: 20px;
-  border-radius: 25px;
-  height: 1000px;
-  
-}
-
-.project-video {
-  width: 100%;
-  height: 100%;
-}*/
