@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with JohnDoe landing page.">
     <meta name="author" content="Devcrud">
@@ -9,65 +10,144 @@
     <!-- font icons -->
     <link rel="stylesheet" href="../assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + JohnDoe main styles -->
-	<link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">      
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
     <nav class="navbar sticky-top affix navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
-        <div class="container">
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="navbar_container">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="../index.html#home" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../index.html#about" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../index.html#resume" class="nav-link">Resume</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav brand">
-                    <!-- <img src="../assets/imgs/avatar.jpg" alt="" class="brand-img"> -->
-                    <li class="brand-txt">
-                        <h5 class="brand-title">Héctor Ochando Casañ</h5>
-                        <div class="brand-subtitle">Software Engineer</div>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="../index.html#portfolio" class="nav-link">Portfolio</a>
-                    </li>                   
-                    <li class="nav-item last-item">
-                        <a href="../index.html#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
+                <div class="navbar_flex">
+                    <div class="navbar_display">
+                        <ul class="navbar-nav brand">
+                            <img src="../assets/imgs/avatar.jpg" alt="" class="brand-img">
+                            <li class="brand-txt">
+                                <h5 class="brand-title">Héctor Ochando Casañ</h5>
+                                <div class="brand-subtitle">Software Engineer</div>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <a href="hector_ochando_CV.pdf" download
+                                class="btn btn-primary btn-rounded navbar_cv_button" target="_blank"><i
+                                    class="ti-download pr-2"></i>CV</a>
+                            <ul class="social-icons aling-center">
+                                <li class="social-item"><a class="social-link"
+                                        href="https://www.linkedin.com/in/hector-ochando/" target="_blank"><i
+                                            class="ti-linkedin" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a class="social-link" href="https://github.com/ochandoca"
+                                        target="_blank"><i class="ti-github" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="navbar_nav_buttons">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"></li>
+                            <a href="../index.html#home" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item"></li>
+                            <a href="../index.html#portfolio" class="nav-link">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../index.html#about" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item"></li>
+                            <a href="../index.html#resume" class="nav-link">Resume</a>
+                            </li>
+                            <li class="nav-item last-item">
+                                <a href="../index.html#contact" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     </nav>
-    <div class="container-fluid portfolio-container">
-        <h1>Memory Manager</h1>
-        <p>Memory management with a custom Memory Manager.
-            Developed a custom Memory Manager, following the arena allocator pattern which I programmed in C to manage dynamic memory allocation and catch any memory leak.            
-        </p>
-        <div class="contenedor_iframe">
-            
-        </div>
-        <p>
-            <a class="steam" href="https://store.steampowered.com/app/2999270/Shelley_Manor/" target="_blank">Alredy available in STEAM</a>
-        </p>
-    </div>
+    <article class="project-container">
+        <article class="project-section">
+            <div class="project-section-title-container">
+                <h1>Memory Manager</h1>
+                <div class="project-section-skill-container">
+                    <img src="../assets/imgs/logos/c.png" alt="C">
+                </div>
+            </div>
+            <h3>Resume</h3>
+            <hr>
+            <p>
+                This project has been based on understanding the basics of memory management and how to implement a
+                memory
+                manager/allocator. To understand this I have developed a free list allocator. With a basic operation and
+                with a single
+                memory pool. This allocator is developed to be used in single thread so it does not support multiple
+                threads and
+                therefore does not optimise access at chache line level and does not provide a safe memory allocation.
+            </p>
+        </article>
+        <article class="project-section">
+            <h2>What I have learned</h2>
+            <hr>
+            <p>
+                Memory management is complex to the point of affecting execution time, not just the time it takes to
+                allocate memory or
+                free it. So I would divide what I have learned into three points.
+            </p>
+            <h4>Allocators:</h4>
+            <p>First of all, the type of allocator you are using matters when it comes to allocating memory, as
+                there is no perfect
+                allocator for all situations. There are allocators like the following with their pros and cons.
+            </p>
+            <ul>
+                <li>Linear Allocator</li>
+                <li>Stack Allocator</li>
+                <li>Free List Allocator</li>
+                <li>Bitmap Allocator</li>
+                <li>Buddy Allocator</li>
+                <li>Global Allocator</li>
+            </ul>
+            <p>It should be noted that a global allocator is not an allocator that follows any memory
+                reservation
+                paradigm but is
+                important to mention because of its ability to be accessed by multiple threads.</p>
+            <h4>Multithread:</h4>
+            <p>Taking into account that most systems where memory management is important are multithreaded, it is
+                necessary to adapt
+                the allocators for multithreading. This implies both safe access to the allocator and taking into
+                account where the
+                memory is being reserved, as there may be synchronisation of threads if they read or write in nearby
+                positions (within
+                the same chache line).
+                This happens because CPUs do not read a single value from the ram but load a chache the size of a chache
+                line (in most
+                cases 64 bytes), at least at the L1 level.
+            </p>
+            <h4>Hardware Resources:</h4>
+            <p>Finally, it is worth noting that the concept of memory that is often used in the teaching of C/C++ is
+                that memory comes
+                from RAM. This is not exactly the case.
+                Taking into account that most operating systems have virtual memory. That is to say that one works with
+                virtual memory
+                that is mapped to physical memory (RAM). You should make good use of these resources and not hog them.
+                Because many of
+                the allocators mentioned above work with large memory pools. For this purpose, a range of virtual memory
+                addresses are
+                reserved and mapped or unmapped to physical memory according to their usage.</p>
+        </article>
+    </article>
     <footer class="footer py-3 footer_portfolio">
         <div class="container text-center">
             <p class="small mb-0 text-light">
-                &copy; <script>document.write(new Date().getFullYear())</script> Héctor Ochando Casañ</span></a> 
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> Héctor Ochando Casañ</span></a>
             </p>
         </div>
     </footer>
 
-	<!-- core  -->
+    <!-- core  -->
     <script src="../assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 
@@ -81,4 +161,5 @@
     <!-- <script src="../assets/js/app.js"></script> -->
 
 </body>
+
 </html>

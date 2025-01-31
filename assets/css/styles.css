@@ -13002,6 +13002,7 @@ a.white:hover {
 .project-card-title-container-column {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
   align-items: center;
@@ -13032,7 +13033,7 @@ a.white:hover {
   border-radius: 10px;
 }
 
-.project-card-opengl-logo {
+.project-card-large-logo {
   max-width: 65px !important;
   max-height: 50px !important;
 }
@@ -13071,9 +13072,10 @@ a.white:hover {
 }
 
 @media (min-width: 768px) {
-  .project-section{
+  .project-section {
     width: 80%;
   }
+
   .project-section-title-container {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -13202,21 +13204,25 @@ a.white:hover {
 
 .has-cpp-keyword-color {
   color: #B578DD;
+  padding: 0;
 }
 
 .has-cpp-type-color {
   color: #CDBD7B;
+  padding: 0;
 }
 
 .has-cpp-comments-color {
   color: #529949;
+  padding: 0;
 }
 
 /* Accordion Camera */
 .accordion_camera {
   background-color: #2f2f2f;
   margin: 0;
-  padding:0 20px 0 15px;
+  margin-bottom: 10px;
+  padding: 0 20px 0 15px;
   border-radius: 10px;
   border: 1.5px solid rgba(248, 92, 112, 1);
 
@@ -13225,14 +13231,14 @@ a.white:hover {
     width: 100%;
     padding: 10px 0;
 
-    & > input[type="checkbox"] {
+    &>input[type="checkbox"] {
       display: none;
     }
 
     & label {
-     
+
       margin: 0;
-      line-height: 1;     
+      line-height: 1;
       cursor: pointer;
 
       & svg {
@@ -13241,15 +13247,15 @@ a.white:hover {
         padding-right: 10px;
         transition: transform 500ms;
       }
-    }    
+    }
   }
 }
 
-.accordion_camera input[type="checkbox"]:checked ~ .accordion_content {
+.accordion_camera input[type="checkbox"]:checked~.accordion_content {
   grid-template-rows: 1fr;
 }
 
-.accordion_camera input[type="checkbox"]:checked ~ label svg {  
+.accordion_camera input[type="checkbox"]:checked~label svg {
   transform: rotate(90deg) translateX(5px);
 }
 
@@ -13259,18 +13265,18 @@ a.white:hover {
   grid-template-rows: 0fr;
   transition: grid-template-rows 500ms;
 
-  & > div {
+  &>div {
     overflow: hidden;
   }
 }
 
 .accordion_content pre {
-  background-color: #2f2f2f;  
+  background-color: #2f2f2f;
   line-height: 1.6;
   font-size: 17px;
   /* margin: 0px; */
   /* border-radius: 0px 0px 10px 10px; */
-  border: 0; 
+  border: 0;
 }
 
 .accordion_content pre code {
