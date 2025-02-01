@@ -74,68 +74,46 @@
                 <h1>Abstract Data Types</h1>
                 <div class="project-section-skill-container">
                     <img src="../assets/imgs/logos/c.png" alt="C">
+                    <img src="../assets/imgs/logos/c_plusplus.png" alt="C++">
                 </div>
             </div>
             <h3>Resume</h3>
             <hr>
             <p>
-                This project has been based on understanding the basics of memory management and how to implement a
-                memory
-                manager/allocator. To understand this I have developed a free list allocator. With a basic operation and
-                with a single
-                memory pool. This allocator is developed to be used in single thread so it does not support multiple
-                threads and
-                therefore does not optimise access at chache line level and does not provide a safe memory allocation.
+                As part of the learning process, different types of ADTs (Abstract Data Types) have been developed to
+                study the design
+                of data containers. In this process, dynamic memory management has been taken into account, evaluating
+                the advantages
+                and disadvantages of each structure. Aspects such as memory management flexibility, data access
+                efficiency and cost in
+                terms of resources have been analysed to better understand how each type of container impacts on
+                performance and
+                implementation.
             </p>
         </article>
         <article class="project-section">
-            <h2>What I have learned</h2>
+            <h2>Data Structures Developed</h2>
             <hr>
-            <p>
-                Memory management is complex to the point of affecting execution time, not just the time it takes to
-                allocate memory or
-                free it. So I would divide what I have learned into three points.
-            </p>
-            <h4>Allocators:</h4>
-            <p>First of all, the type of allocator you are using matters when it comes to allocating memory, as
-                there is no perfect
-                allocator for all situations. There are allocators like the following with their pros and cons.
-            </p>
+            <p>The following data structures have been developed in this project:</p>
             <ul>
-                <li>Linear Allocator</li>
-                <li>Stack Allocator</li>
-                <li>Free List Allocator</li>
-                <li>Bitmap Allocator</li>
-                <li>Buddy Allocator</li>
-                <li>Global Allocator</li>
+                <li>Memory Node</li>
+                <li>Logger</li>
+                <li>Queue</li>
+                <li>Stack</li>
+                <li>Vector</li>
+                <li>Cirtual Vector</li>
+                <li>Movable Head Vector</li>
+                <li>List</li>
+                <li>Circular List</li>
+                <li>Double Linked List</li>
+                <li>Circular Double Linked List</li>
             </ul>
-            <p>It should be noted that a global allocator is not an allocator that follows any memory
-                reservation
-                paradigm but is
-                important to mention because of its ability to be accessed by multiple threads.</p>
-            <h4>Multithread:</h4>
-            <p>Taking into account that most systems where memory management is important are multithreaded, it is
-                necessary to adapt
-                the allocators for multithreading. This implies both safe access to the allocator and taking into
-                account where the
-                memory is being reserved, as there may be synchronisation of threads if they read or write in nearby
-                positions (within
-                the same chache line).
-                This happens because CPUs do not read a single value from the ram but load a chache the size of a chache
-                line (in most
-                cases 64 bytes), at least at the L1 level.
-            </p>
-            <h4>Hardware Resources:</h4>
-            <p>Finally, it is worth noting that the concept of memory that is often used in the teaching of C/C++ is
-                that memory comes
-                from RAM. This is not exactly the case.
-                Taking into account that most operating systems have virtual memory. That is to say that one works with
-                virtual memory
-                that is mapped to physical memory (RAM). You should make good use of these resources and not hog them.
-                Because many of
-                the allocators mentioned above work with large memory pools. For this purpose, a range of virtual memory
-                addresses are
-                reserved and mapped or unmapped to physical memory according to their usage.</p>
+            <p>In addition, the data structures have been ported to C++ using classes and objects, which allows for
+                better organisation
+                and reuse of the code. Tests have been carried out to evaluate the memory usage and efficiency of these
+                structures,
+                comparing them with STL (Standard Template Library) implementations to verify their performance and
+                optimisation.</p>
         </article>
     </article>
     <footer class="footer py-3 footer_portfolio">

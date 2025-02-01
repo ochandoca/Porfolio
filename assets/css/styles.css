@@ -12902,7 +12902,6 @@ a.white:hover {
   margin-bottom: 2rem;
   /* text-align: center; */
 }
-}
 
 .footer_portfolio {
   position: fixed;
@@ -13051,6 +13050,7 @@ a.white:hover {
   align-items: center;
   padding: 20px;
   gap: 15px;
+  margin-bottom: 50px;
 }
 
 .project-section {
