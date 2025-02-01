@@ -13053,9 +13053,18 @@ a.white:hover {
   margin-bottom: 50px;
 }
 
+
 .project-showcase-row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 1200px) {
+  .project-showcase-row {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 
@@ -13133,21 +13142,20 @@ a.white:hover {
   max-width: 135px !important;
 }
 
-@media (min-width: 992px) {
-  .project-section-skill-container img {
-    max-width: 75px;
-    max-height: 75px;
-  }
 
-  .project-skill-opengl-logo,
-  .project-skill-openal-logo,
-  .project-skill-physx-logo {
-    max-width: 120px !important;
-  }
+.project-section-skill-container img {
+  max-width: 75px;
+  max-height: 75px;
+}
 
-  .project-skill-ps5-logo {
-    max-width: 175px !important;
-  }
+.project-skill-opengl-logo,
+.project-skill-openal-logo,
+.project-skill-physx-logo {
+  max-width: 120px !important;
+}
+
+.project-skill-ps5-logo {
+  max-width: 175px !important;
 }
 
 .project-section hr {
