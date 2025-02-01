@@ -74,68 +74,407 @@
                 <h1>Several ASM Demos</h1>
                 <div class="project-section-skill-container">
                     <img src="../assets/imgs/logos/c.png" alt="C">
+                    <img src="../assets/imgs/logos/assembly.png" alt="ASM">
                 </div>
             </div>
             <h3>Resume</h3>
             <hr>
             <p>
-                This project has been based on understanding the basics of memory management and how to implement a
-                memory
-                manager/allocator. To understand this I have developed a free list allocator. With a basic operation and
-                with a single
-                memory pool. This allocator is developed to be used in single thread so it does not support multiple
-                threads and
-                therefore does not optimise access at chache line level and does not provide a safe memory allocation.
+
             </p>
         </article>
         <article class="project-section">
-            <h2>What I have learned</h2>
+            <h2>Landscape</h2>
             <hr>
-            <p>
-                Memory management is complex to the point of affecting execution time, not just the time it takes to
-                allocate memory or
-                free it. So I would divide what I have learned into three points.
-            </p>
-            <h4>Allocators:</h4>
-            <p>First of all, the type of allocator you are using matters when it comes to allocating memory, as
-                there is no perfect
-                allocator for all situations. There are allocators like the following with their pros and cons.
-            </p>
-            <ul>
-                <li>Linear Allocator</li>
-                <li>Stack Allocator</li>
-                <li>Free List Allocator</li>
-                <li>Bitmap Allocator</li>
-                <li>Buddy Allocator</li>
-                <li>Global Allocator</li>
+            <div class="project-showcase-row project-section no-padding">
+                <article class="project-section">
+                    <h3>ShowCase</h3>
+                    <iframe id="video_landscape" src="https://www.youtube.com/embed/VK1b9KlqD34?si=6u_faNNm41FOeFp8"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </article>
+                <article class="project-section">
+                    <h3>Work Carried Out</h3>
+                    <p></p>
+                </article>
+            </div>
+            <ul class="accordion_camera">
+                <li>
+                    <input type="checkbox" name="accordion" id="accordion_landcape_c_code">
+                    <label for="accordion_landcape_c_code">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                        C Optimised Function</label>
+                    <div class="accordion_content">
+                        <div>
+                            <pre><code>
+<mark class="has-cpp-keyword-color">typedef</mark> <mark class="has-cpp-keyword-color">struct</mark>
+{
+  <mark class="has-cpp-type-color">short</mark>* drawlist;
+  <mark class="has-cpp-type-color">int</mark> h;
+  <mark class="has-cpp-type-color">float</mark> projection;
+  <mark class="has-cpp-type-color">FVector</mark>* MeshPoints;
+  <mark class="has-cpp-type-color">int</mark> MeshW;
+  <mark class="has-cpp-type-color">int</mark> MeshH;
+  <mark class="has-cpp-type-color">Fx8</mark>* BitMap;
+  <mark class="has-cpp-type-color">int</mark> cam_x;
+  <mark class="has-cpp-type-color">int</mark> cam_y;
+} <mark class="has-cpp-type-color">DoEffectArguments</mark>;
+
+<mark class="has-cpp-keyword-color">static</mark> <mark class="has-cpp-type-color">int</mark> <mark class="has-cpp-function-color">DoEffect</mark>(<mark class="has-cpp-type-color">DoEffectArguments</mark>* args)
+{
+  <mark class="has-cpp-type-color">short</mark>* drawlist = args->drawlist;
+  <mark class="has-cpp-type-color">int</mark> h = args->h;
+  <mark class="has-cpp-type-color">float</mark> projection = args->projection;
+  <mark class="has-cpp-type-color">FVector</mark>* MeshPoints = args->MeshPoints;
+  <mark class="has-cpp-type-color">int</mark> MeshW = args->MeshW;
+  <mark class="has-cpp-type-color">int</mark> MeshH = args->MeshH;
+  <mark class="has-cpp-type-color">Fx8</mark>* BitMap = args->BitMap;
+  <mark class="has-cpp-type-color">int</mark> PosX = args->cam_x;
+  <mark class="has-cpp-type-color">int</mark> PosY = args->cam_y;
+  
+  <mark class="has-cpp-type-color">short</mark>* ori = drawlist;
+  
+  <mark class="has-cpp-type-color">int</mark> half_h = h >> 1;
+  
+  <mark class="has-cpp-keyword-color">for</mark> (<mark class="has-cpp-type-color">int</mark> iy = 0; iy < MeshH; iy++) 
+  { 
+    <mark class="has-cpp-type-color">int</mark> MapPosY = (PosY + iy) & 127; 
+    <mark class="has-cpp-type-color">FVector</mark>* LinePoints = &MeshPoints[iy * MeshW]; 
+    <mark class="has-cpp-type-color">Fx8</mark>* BitMapLine = &BitMap[MapPosY * 128]; 
+    <mark class="has-cpp-type-color">float</mark> z = LinePoints->z;
+    <mark class="has-cpp-type-color">Fx8</mark> proj = (<mark class="has-cpp-type-color">int</mark>)(projection * z * 256.0f);
+    
+    <mark class="has-cpp-keyword-color">for</mark> (<mark class="has-cpp-type-color">int</mark> ix = 0; ix < MeshW; ix++) 
+    { 
+      <mark class="has-cpp-type-color">FVector</mark>* Point = LinePoints; 
+      <mark class="has-cpp-type-color">Fx8</mark> y = Point->y;
+      <mark class="has-cpp-type-color">int</mark> x = Point->x;
+      <mark class="has-cpp-type-color">int</mark> MapPosX = (PosX + ix) & 127;
+  
+      y -= BitMapLine[MapPosX];
+  
+      <mark class="has-cpp-type-color">int</mark> yp = half_h + ((y * proj) >> 16);
+  
+      drawlist[0] = x;
+      drawlist[1] = yp;
+      drawlist[2] = 0xff;
+      drawlist += 3;
+      
+      LinePoints++;
+    }
+  }
+  
+  <mark class="has-cpp-keyword-color">return</mark> (drawlist - ori);
+}
+                        </code></pre>
+                        </div>
+                    </div>
+                </li>
             </ul>
-            <p>It should be noted that a global allocator is not an allocator that follows any memory
-                reservation
-                paradigm but is
-                important to mention because of its ability to be accessed by multiple threads.</p>
-            <h4>Multithread:</h4>
-            <p>Taking into account that most systems where memory management is important are multithreaded, it is
-                necessary to adapt
-                the allocators for multithreading. This implies both safe access to the allocator and taking into
-                account where the
-                memory is being reserved, as there may be synchronisation of threads if they read or write in nearby
-                positions (within
-                the same chache line).
-                This happens because CPUs do not read a single value from the ram but load a chache the size of a chache
-                line (in most
-                cases 64 bytes), at least at the L1 level.
-            </p>
-            <h4>Hardware Resources:</h4>
-            <p>Finally, it is worth noting that the concept of memory that is often used in the teaching of C/C++ is
-                that memory comes
-                from RAM. This is not exactly the case.
-                Taking into account that most operating systems have virtual memory. That is to say that one works with
-                virtual memory
-                that is mapped to physical memory (RAM). You should make good use of these resources and not hog them.
-                Because many of
-                the allocators mentioned above work with large memory pools. For this purpose, a range of virtual memory
-                addresses are
-                reserved and mapped or unmapped to physical memory according to their usage.</p>
+            <ul class="accordion_camera">
+                <li>
+                    <input type="checkbox" name="accordion" id="accordion_landcape_asm_code">
+                    <label for="accordion_landcape_asm_code">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                        ASM Code From the Optimised Function</label>
+                    <div class="accordion_content">
+                        <div>
+                            <pre><code>@.global DoEffect
+
+DoEffect:
+
+stmdb sp!,{r4,r5,r6,r7,r8,r9,r10,r11,r12,r14}
+
+sub sp,sp,#4
+
+Setup:
+
+ldr r1,[r0] @ short* drawlist = args->drawlist;
+ldr r2,[r0,#4] @ int h = args->h;
+flds s0,[r0,#8] @ float projection = args->projection;
+ldr r5,[r0,#16] @ int MeshW = args->MeshW;
+ldr r6,[r0,#20] @ int MeshH = args->MeshH;
+ldr r8,[r0,#28] @ int PosX = args->cam_x;
+
+mov r10,r1 @ short* ori = drawlist;
+mov r2,r2,asr #1 @ int half_h = h >> 1;
+
+mov r11,#0 @ iy = 0
+
+y_for:
+
+cmp r11,r6 @ iy > MeshH ?
+bge return
+
+ldr r9,[r0,#32] @ int PosY = args->cam_y;
+add r12,r9,r11 @ (PosY + iy)
+and r12,r12,#127 @ int MapPosY = (PosY + iy) & 127;
+
+mul r4,r11,r5 @ iy * MeshW
+
+mov r3,#12 @ sizeof(FVector)
+mul r3,r4,r3 @ [iy * MeshW]
+
+ldr r4,[r0,#12] @ FVector* MeshPoints = args->MeshPoints;
+add r4,r3,r4 @ FVector* LinePoints = &MeshPoints[iy * MeshW];
+
+ldr r7,[r0,#24] @ Fx8* BitMap = args->BitMap;
+mov r3,#128
+mul r3,r3,r12 @ [MapPosY * 128]
+mov r3,r3,lsl #2 @ * 4
+add r7,r3,r7 @ Fx8* BitMapLine = &BitMap[MapPosY * 128]
+
+flds s1,[r4,#8] @ float z = LinePoints->z;
+mov r3,#256 @ 256
+str r3,[sp]
+flds s2,[sp]
+fsitos s2,s2 @ (float)256
+
+fmuls s2,s2,s1 @ z * 256.0f
+fmuls s2,s2,s0 @ projection * z * 256.0f
+ftosis s2,s2 @ (int)(projection * z * 256.0f)
+fsts s2,[sp]
+ldr r3,[sp] @ Fx8 proj = (int)(projection * z * 256.0f)
+
+mov r12,#0 @ ix = 0
+
+for_x:
+
+cmp r12,r5 @ ix < MeshW ? 
+bge end_y_for 
+
+ldr r9,[r4] @ int x=Point->x
+strh r9,[r1] @ drawlist[0] = x
+
+add r9,r8,r12 @ PosX + ix
+and r9,r9,#127 @ int MapPosX = (PosX + ix) & 127
+
+add r9,r7,r9,lsl #2 @ BitMapLine[MapPosX]
+ldr r9,[r9]
+
+ldr r14,[r4,#4] @ Fx8 y = Point->y
+
+sub r9,r14,r9 @ y -= BitMapLine[MapPosX]
+
+mul r9,r9,r3 @ (y * proj)
+add r9,r2,r9,asr #16 @ int yp = half_h + ((y * proj) >> 16)
+
+add r1,r1,#2 @ drawlist++
+strh r9,[r1] @ drawlist[1] = yp
+
+add r1,r1,#2 @ drawlist++
+mov r9,#0xff
+strh r9,[r1] @ drawlist[2] = 0xff
+
+add r1,r1,#2 @ drawlist++
+
+add r4,r4,#12 @ LinePoints++
+
+add r12,r12,#1 @ ix++
+b for_x
+
+end_y_for:
+
+add r11,r11,#1 @ iy++
+b y_for
+
+return:
+
+sub r0,r1,r10 @ drawlist - ori
+mov r0,r0,asr #1
+
+add sp,sp,#4
+
+ldmia sp!,{r4,r5,r6,r7,r8,r9,r10,r11,r12,r14}
+bx lr</code></pre>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </article>
+        <article class="project-section">
+            <h2>Voxels</h2>
+            <hr>
+            <div class="project-showcase-row project-section no-padding">
+                <article class="project-section">
+                    <h3>ShowCase</h3>
+                    <iframe id="video_voxels" src="https://www.youtube.com/embed/Dxwgeqwojdg?si=1fZS-u8aWTFeUo6P"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </article>
+                <article class="project-section">
+                    <h3>Work Carried Out</h3>
+                    <p></p>
+                </article>
+            </div>
+            <ul class="accordion_camera">
+                <li>
+                    <input type="checkbox" name="accordion" id="accordion_voxels_c_code">
+                    <label for="accordion_voxels_c_code">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                        Voxels Optimised Function</label>
+                    <div class="accordion_content">
+                        <div>
+                            <pre><code><mark class="has-cpp-keyword-color">typedef struct</mark>
+{
+  <mark class="has-cpp-type-color">int</mark> pos_x, pos_z;
+  <mark class="has-cpp-type-color">float</mark> h;
+  <mark class="has-cpp-type-color">float</mark> proj;
+} <mark class="has-cpp-type-color">camera_desc_t</mark>;
+
+<mark class="has-cpp-keyword-color">typedef struct</mark>
+{
+  <mark class="has-cpp-type-color">unsigned int</mark>* pixels;
+  <mark class="has-cpp-type-color">int</mark> stride;
+  <mark class="has-cpp-type-color">unsigned int</mark> w;
+  <mark class="has-cpp-type-color">unsigned int</mark> h;
+} <mark class="has-cpp-type-color">screen_desc_t</mark>;
+
+<mark class="has-cpp-keyword-color">typedef struct</mark>
+{
+  <mark class="has-cpp-type-color">unsigned int</mark>* pixels;
+  <mark class="has-cpp-type-color">unsigned int</mark> w;
+  <mark class="has-cpp-type-color">unsigned int</mark> h;
+} <mark class="has-cpp-type-color">map_desc_t</mark>;
+
+<mark class="has-cpp-keyword-color">static inline</mark> <mark class="has-cpp-type-color">void</mark> <mark class="has-cpp-function-color">plot</mark>(<mark class="has-cpp-type-color">screen_desc_t</mark>* screen, <mark class="has-cpp-type-color">unsigned int</mark> x, <mark class="has-cpp-type-color">unsigned int</mark> y, <mark class="has-cpp-type-color">unsigned int</mark> color)
+{
+  <mark class="has-cpp-keyword-color">if</mark> (x < 0 || x >= screen->h) <mark class="has-cpp-keyword-color">return</mark>;
+  <mark class="has-cpp-keyword-color">if</mark> (y < 0 || y >= screen->w) <mark class="has-cpp-keyword-color">return</mark>;
+  
+  screen->pixels[x + y * screen->stride] = color;
+}
+
+<mark class="has-cpp-keyword-color">#define</mark> MAX_DEPTH 1400
+
+<mark class="has-cpp-keyword-color">static</mark> <mark class="has-cpp-type-color">int</mark> <mark class="has-cpp-function-color">Voxels</mark>(<mark class="has-cpp-type-color">screen_desc_t</mark>* screen, <mark class="has-cpp-type-color">camera_desc_t</mark>* camera, <mark class="has-cpp-type-color">map_desc_t</mark>* map)
+{
+  <mark class="has-cpp-type-color">int</mark> x_screen;
+  <mark class="has-cpp-type-color">int</mark> z_map;
+  <mark class="has-cpp-type-color">int</mark> n_draw = 0;
+  <mark class="has-cpp-type-color">float</mark> y;
+  <mark class="has-cpp-type-color">float</mark> y_center = (<mark class="has-cpp-type-color">float</mark>)(screen->h >> 1);
+
+  <mark class="has-cpp-type-color">float</mark> angle = 90.0f - (FOV * 0.5f);
+  <mark class="has-cpp-type-color">float</mark> radians_angle = angle * 3.141592f/180.0f;
+  <mark class="has-cpp-type-color">float</mark> sin_angle = <mark class="has-cpp-function-color">sinf</mark>(radians_angle);
+  <mark class="has-cpp-type-color">float</mark> cos_angle = <mark class="has-cpp-function-color">cosf</mark>(radians_angle);
+  
+  <mark class="has-cpp-comments-color">// calculate x depending on the FOV</mark>
+  <mark class="has-cpp-type-color">float</mark> max_vector_x = cos_angle * (1.0f / sin_angle);
+  <mark class="has-cpp-type-color">float</mark> min_vector_x = -max_vector_x;
+
+  <mark class="has-cpp-type-color">int</mark> mip_level = 0;
+
+  <mark class="has-cpp-keyword-color">for</mark> (x_screen = 0; x_screen < screen->w; x_screen++)
+  {
+    <mark class="has-cpp-comments-color">// lerp -1 to 1</mark>
+    <mark class="has-cpp-type-color">int</mark> v_map = camera->pos_z;
+    <mark class="has-cpp-type-color">float</mark> x_map = (<mark class="has-cpp-type-color">float</mark>)camera->pos_x;
+    <mark class="has-cpp-type-color">float</mark> step_x = <mark class="has-cpp-function-color">lerpf</mark>(min_vector_x, max_vector_x, (<mark class="has-cpp-type-color">float</mark>)x_screen / (<mark class="has-cpp-type-color">float</mark>)screen->w);
+
+    <mark class="has-cpp-type-color">int</mark> last_y = screen->h;
+    <mark class="has-cpp-type-color">int</mark> max_y = screen->h;
+
+    <mark class="has-cpp-keyword-color">for</mark> (z_map = 1; z_map < MAX_DEPTH; z_map++)
+    {
+      mip_level = z_map / 1000;
+
+      <mark class="has-cpp-type-color">int</mark> v = ((<mark class="has-cpp-type-color">int</mark>)x_map) & (map[0].w - 1);
+      <mark class="has-cpp-type-color">int</mark> u = v_map & (map[0].h - 1);
+
+      v = v >> mip_level;
+      u = u >> mip_level;
+
+      <mark class="has-cpp-type-color">unsigned int</mark> pixel = map[mip_level].pixels[u + v * map[mip_level].w];
+
+      <mark class="has-cpp-type-color">unsigned int</mark> h = pixel >> 24;
+      <mark class="has-cpp-type-color">unsigned int</mark> color = (pixel & 0x00ffffff) | 0xff000000;
+
+      y = (<mark class="has-cpp-type-color">float</mark>)(h - camera->h);
+      
+      x_map += step_x;
+      v_map += 1;
+
+      <mark class="has-cpp-type-color">int</mark> proj_x = x_screen;
+      <mark class="has-cpp-type-color">int</mark> proj_y = y_center - (y * camera->proj / (<mark class="has-cpp-type-color">float</mark>)z_map);
+
+      <mark class="has-cpp-keyword-color">if</mark> (proj_y < max_y)
+      {
+        <mark class="has-cpp-keyword-color">for</mark> (; max_y > proj_y; max_y--)
+        {
+          <mark class="has-cpp-comments-color">/** Inverted plot */</mark>
+          <mark class="has-cpp-function-color">plot</mark>(screen, max_y, proj_x, color);
+          
+          <mark class="has-cpp-comments-color">/** Non-Inverted plot */</mark>
+          <mark class="has-cpp-comments-color">//plot(screen, proj_x, max_y, color);</mark>
+        }
+      }
+    }
+  }
+  <mark class="has-cpp-keyword-color">return</mark> MAX_DEPTH * screen->w;
+}</code></pre>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="accordion_camera">
+                <li>
+                    <input type="checkbox" name="accordion" id="accordion_tiling_rotate_c_code">
+                    <label for="accordion_tiling_rotate_c_code">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                        TilingRotate Optimised Function</label>
+                    <div class="accordion_content">
+                        <div>
+                            <pre><code><mark class="has-cpp-keyword-color">#define</mark> TLS 32
+
+<mark class="has-cpp-keyword-color">static</mark> <mark class="has-cpp-type-color">int</mark> <mark class="has-cpp-function-color">Rotate</mark>(<mark class="has-cpp-type-color">unsigned int</mark>* src, <mark class="has-cpp-type-color">unsigned int</mark>* dst, <mark class="has-cpp-type-color">int</mark> src_w, <mark class="has-cpp-type-color">int</mark> src_h, <mark class="has-cpp-type-color">int</mark> src_stride, <mark class="has-cpp-type-color">int</mark> dst_w, <mark class="has-cpp-type-color">int</mark> dst_h, <mark class="has-cpp-type-color">int</mark> dst_stride)
+{
+  <mark class="has-cpp-keyword-color">for</mark> (<mark class="has-cpp-type-color">int</mark> y = 0; y < src_h; y++)
+  {
+    <mark class="has-cpp-keyword-color">for</mark> (<mark class="has-cpp-type-color">int</mark> x = 0; x < src_w; x++)
+    {
+      <mark class="has-cpp-type-color">unsigned int</mark> tmp = src[x + y * src_stride];
+      src[x + y * src_stride] = dst[y + x * dst_stride];
+      dst[y + x * dst_stride] = tmp;
+    }
+  }
+  <mark class="has-cpp-keyword-color">return</mark> 0;
+}
+
+<mark class="has-cpp-keyword-color">static</mark> <mark class="has-cpp-type-color">int</mark> <mark class="has-cpp-function-color">TilingRotate</mark>(<mark class="has-cpp-type-color">unsigned int</mark>* src, <mark class="has-cpp-type-color">unsigned int</mark>* dst, <mark class="has-cpp-type-color">int</mark> src_w, <mark class="has-cpp-type-color">int</mark> src_h, <mark class="has-cpp-type-color">int</mark> src_stride, <mark class="has-cpp-type-color">int</mark> dst_w, <mark class="has-cpp-type-color">int</mark> dst_h, <mark class="has-cpp-type-color">int</mark> dst_stride)
+{
+  <mark class="has-cpp-function-color">assert</mark>((src_w % TLS) == 0);
+  <mark class="has-cpp-function-color">assert</mark>((src_h % TLS) == 0);
+
+  <mark class="has-cpp-keyword-color">for</mark>(<mark class="has-cpp-type-color">int</mark> y = 0; y < src_h; y += TLS)
+  {
+    <mark class="has-cpp-keyword-color">for</mark>(<mark class="has-cpp-type-color">int</mark> x = 0; x < src_w; x += TLS)
+    {
+      <mark class="has-cpp-function-color">Rotate</mark>(src + (x + y * src_w), dst + (y + x * dst_w), TLS, TLS, src_stride, TLS, TLS, dst_stride);
+    }
+  }
+
+  <mark class="has-cpp-keyword-color">return</mark> src_w * src_h;
+}</code></pre>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </article>
     </article>
     <footer class="footer py-3 footer_portfolio">

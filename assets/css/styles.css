@@ -13053,6 +13053,13 @@ a.white:hover {
   margin-bottom: 50px;
 }
 
+.project-showcase-row {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
 .project-section {
   color: white;
   background-color: #1f1f1f;
@@ -13225,6 +13232,12 @@ a.white:hover {
   padding: 0;
 }
 
+.has-cpp-function-color {
+  color: #4EAEEF;
+  padding: 0;
+
+}
+
 /* Accordion Camera */
 .accordion_camera {
   background-color: #2f2f2f;
@@ -13360,4 +13373,8 @@ a.white:hover {
   background-color: #2f2f2f;
   text-decoration: none;
   size: 0;
+}
+
+.no-padding {
+  padding: 0px !important;
 }
