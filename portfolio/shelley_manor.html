@@ -108,6 +108,195 @@
             </div>
         </article>
         <article class="project-section">
+            <h2>Work Carried Out</h2>
+            <hr>
+            <p>
+                I was part of the programming team responsible for the development of this video game, working closely
+                with artists and
+                designers to bring the creative vision of the project to life. This interdisciplinary work allowed me to
+                contribute
+                directly to the implementation of several essential functionalities, ensuring a smooth and engaging user
+                experience.
+            </p>
+            <p>The specific functionalities I developed include:</p>
+            <ul>
+                <li>Camera System</li>
+                <li>Artificial Intelligence</li>
+                <li>Sound Integration</li>
+                <li>Interactable System & Interactables</li>
+            </ul>
+        </article>
+        <article class="project-section">
+            <h2>Camera System</h2>
+            <hr>
+            <p>
+                One of my main tasks within the project was to design and develop an advanced system of fixed and
+                semi-fixed cameras
+                that provides an immersive and dynamic visual experience. This system was implemented to suit the
+                narrative and gameplay
+                needs, allowing precise control over perspective and framing in each scenario of the game.
+            </p>
+            <p>
+                In addition, I developed a complementary system for cinematics, focused on highlighting dramatic moments
+                in the game,
+                such as the deaths of the main character or bosses. This system allowed the playback of predefined
+                sequences that
+                integrate smooth transitions, zooms and dramatic angles, ensuring that each key scene was impactful and
+                memorable.
+            </p>
+            <p>
+                Going into more detail on the camera system. A system has been designed to control where the cameras go
+                by means of
+                empty points in the world.
+                These points are related to a collision volume that represents the room you are in.
+                Once you enter one of these volumes the camera transitions according to defined parameters.
+            </p>
+            <!-- accordion -->
+            <ul class="accordion_camera">
+                <li>
+                    <input type="checkbox" name="accordion" id="accordion_camera_actor_label">
+                    <label for="accordion_camera_actor_label">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                        Camera Actor Description</label>
+                    <div class="accordion_content">
+                        <div>
+                            <pre><code><mark class="has-cpp-keyword-color">class</mark> <mark class="has-cpp-type-color">ACameraPoint</mark> : <mark class="has-cpp-keyword-color">public</mark> <mark class="has-cpp-type-color">AActor</mark>
+{
+    <mark class="has-cpp-type-color">UCameraComponent</mark>* CameraComponent;               <mark class="has-cpp-comments-color">/**  Unreal Camera Component */</mark>
+    <mark class="has-cpp-type-color">USplineComponent</mark>* SplineComponent;               <mark class="has-cpp-comments-color">/**  The spline through which the camera will move */</mark>
+
+    <mark class="has-cpp-type-color">ELookMode</mark> LookMode;                              <mark class="has-cpp-comments-color">/**  Behaviour of where the camera will look */</mark>
+    <mark class="has-cpp-type-color">bool</mark> bFollowSpline;                              <mark class="has-cpp-comments-color">/**  If the camera moves along the spline or not */</mark>
+    <mark class="has-cpp-type-color">FCameraTransitionParams</mark> DefaultTransitionParams; <mark class="has-cpp-comments-color">/**  The transition params used by default */</mark>
+
+    ...
+
+    <mark class="has-cpp-comments-color">/** The parameters to be used for the transition to the camera as key  */</mark>
+    <mark class="has-cpp-type-color">TMap</mark><<mark class="has-cpp-type-color">ACameraPoint</mark>*, <mark class="has-cpp-type-color">FCameraTransitionParams</mark>> OverridenTransitionParams;
+};
+</code></pre>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <p>
+                This object represents the camera and has different variables to control its behaviour, both in terms of
+                movement and
+                view.
+            </p>
+            <p>
+                In terms of the behaviour of where the camera looks we have the variable LookMode where thanks to an
+                enum that defines
+                where the camera is going to look. As for example: It doesn't look at any, it looks at the player or
+                it looks where
+                the player is looking.
+                In addition to this there is a variable bFollowSpline where you can set whether the camera is still or
+                moves along the
+                spline.
+            </p>
+            <p>
+                Finally, this object contains a series of variables to store the transition parameters between cameras.
+                These parameters
+                are differentiated in two. The default parameters which are used if there is no specific parameter for
+                the camera to be
+                transitioned. Or a map where as a key is used the camera to be transitioned to and as a value the
+                parameters that will
+                replace the default parameters.
+            </p>
+            <p>
+                The transition parameters are stored in a structure similar to this one:
+            </p>
+            <ul class="accordion_camera">
+                <li>
+                    <input type="checkbox" name="accordion" id="accordion_camera_label">
+                    <label for="accordion_camera_label">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                        Camera Transition Params Description</label>
+                    <div class="accordion_content">
+                        <div>
+                            <pre><code><mark class="has-cpp-keyword-color">struct</mark> <mark class="has-cpp-type-color">CameraTransitionParams</mark>
+{
+    <mark class="has-cpp-type-color">float</mark> TransitionTime;               <mark class="has-cpp-comments-color">/** Duration of the transition */</mark>
+    <mark class="has-cpp-type-color">CameraBlendFunction</mark> BlendFunction;  <mark class="has-cpp-comments-color">/** Blend Function */</mark>
+    <mark class="has-cpp-type-color">bool</mark> bFade;                         <mark class="has-cpp-comments-color">/** Enable and Disable Fade */</mark>
+    <mark class="has-cpp-type-color">float</mark> FadeTime;                     <mark class="has-cpp-comments-color">/** Full Fade time */</mark>
+    <mark class="has-cpp-type-color">float</mark> FadeOutTime;                  <mark class="has-cpp-comments-color">/** Fade out time */</mark>
+    <mark class="has-cpp-type-color">float</mark> FadeInTime;                   <mark class="has-cpp-comments-color">/** Fade in time */</mark>
+};
+</code></pre>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- fin accordion -->
+            <p>
+                Estos parametros de transicion permite hacer transiciones instantaneas o con una interpolacion en un
+                tiempo. Esta
+                inerpolacion se biene definida por una funcion a elecion mediante un el enum CameraBlendFunction. Por
+                ultimo se define
+                si la camara tiene que hacer un fade a negro. Donde se puede contolar cuanto tiempo tarda en hacerse el
+                fade.
+            </p>
+        </article>
+        <article class="project-section">
+            <h2>Artificial Intelligence</h2>
+            <hr>
+            <p>
+                In this project, I was in charge of developing the artificial intelligence (AI) of one of the game's
+                bosses. For this, I
+                worked closely with a member of the game design team, ensuring that the AI mechanics aligned with the
+                desired gameplay
+                experience.
+            </p>
+            <h4>Main features</h4>
+            <p>
+                The boss's AI has a perception system that reacts to two key senses:
+            </p>
+            <ul>
+                <li>Sight: Detects the player when he is within his field of vision.</li>
+                <li>Hearing: Responds to sounds triggered by the player, such as footsteps or interactions with the
+                    environment.</li>
+            </ul>
+            <h4>AI states</h4>
+            <p>
+                The AI operates through three main states, defined to provide a challenging and consistent gaming
+                experience:
+            </p>
+            <p>1. Patrolling:</p>
+            <ul>
+                <li>The boss moves along a predefined route of points within the room.</li>
+                <li>This state is the initial behaviour when there is no indication of the player's presence.</li>
+            </ul>
+            <p>2. Search:</p>
+            <ul>
+                <li>When the boss detects suspicious activity (such as a noise or the player's last visible position),
+                    it enters this state.</li>
+                <li>In this mode, it actively searches for the player in the area near the event.</li>
+            </ul>
+            <p>3. Pursue/Attack:</p>
+            <ul>
+                <li>If the boss has direct visual contact with the player, it chases him and tries to close the distance
+                    to attack him.</li>
+                <li>This state prioritises offensive actions, increasing the tension in the confrontation.</li>
+            </ul>
+            <h4>Special behaviour</h4>
+            <p>
+                Upon completing the puzzle associated with the boss room, the boss moves towards a mirror and turns to
+                stone, becoming
+                immobilised. Once this happens, the player can pick up a key carried by the boss, which is needed to
+                progress through
+                the game.
+            </p>
+        </article>
+        <article class="project-section">
+            <h2>Showcase</h2>
+            <hr>
             <iframe id="video" src="https://www.youtube.com/embed/uukJZx18KDY?si=HwxLfIoxd2RrPRy2"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

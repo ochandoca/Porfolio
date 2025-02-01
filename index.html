@@ -16,25 +16,23 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
     <header class="header">
         <div class="container">
-            
+
             <div class="header-content">
                 <h4 class="header-subtitle">Hello, I am</h4>
                 <h1 class="header-title">Héctor Ochando</h1>
-                <h6 class="header-mono">Software Engineer</h6>                
+                <h6 class="header-mono">Software Engineer</h6>
             </div>
         </div>
     </header>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
-        <div class="navbar_container">            
-            <button class="navbar-toggler" type="button"        data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+        <div class="navbar_container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 <ul class="navbar-nav prueba">
                     <li>
-                        <a href="hector_ochando_CV.pdf" download
-                            class="btn btn-primary btn-rounded navbar_cv_button" target="_blank"><i
-                                class="ti-download pr-2"></i>CV
+                        <a href="hector_ochando_CV.pdf" download class="btn btn-primary btn-rounded navbar_cv_button"
+                            target="_blank"><i class="ti-download pr-2"></i>CV
                         </a>
                     </li>
                     <li>
@@ -47,7 +45,7 @@
                         </ul>
                     </li>
                 </ul>
-            </button>            
+            </button>
             <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar_flex">
                     <div class="navbar_display">
@@ -125,7 +123,7 @@
                     <a href="#" data-filter=".others">
                         Others
                     </a>
-                </div>                
+                </div>
                 <div class="portfolio-container">
                     <div class="col-md-6 col-lg-4 new unreal ia">
                         <div class="portfolio-item">
@@ -153,9 +151,13 @@
                                         <div class="projecr-card-skill-container">
                                             <img src="assets/imgs/logos/c_plusplus.png" alt="C++">
                                             <img src="assets/imgs/logos/opengl.png" alt="OpenGL"
-                                                class="project-card-opengl-logo">
+                                                class="project-card-large-logo">
                                             <img src="assets/imgs/logos/directx11.png" alt="DirectX11">
                                             <img src="assets/imgs/logos/xbox_1.png" alt="XBox">
+                                            <img src="assets/imgs/logos/openal.png" alt="OpenAL"
+                                                class="project-card-large-logo">
+                                            <img src="assets/imgs/logos/nvidia_physx.png" alt="PhysX"
+                                                class="project-card-large-logo">
                                         </div>
                                     </div>
                                     <hr>
@@ -165,6 +167,121 @@
                             </a>
                         </div>
                     </div>
+                    <div class="col-md-6 col-lg-4 new grafics_programming">
+                        <div class="portfolio-item">
+                            <a href="portfolio/raytracing_directx12.html">
+                                <div class="project-card">
+                                    <div class="project-card-title-container-row">
+                                        <h6>Ray Tracing DX12</h6>
+                                        <div class="projecr-card-skill-container">
+                                            <img src="assets/imgs/logos/c_plusplus.png" alt="C++">
+                                            <img src="assets/imgs/logos/directx12.png" alt="DirectX12">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <img src="assets/imgs/projects/raytracing_dx12/RayTracing_Picture.png"
+                                        alt="RayTracing in DirectX12">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 new others">
+                        <div class="portfolio-item">
+                            <a href="portfolio/ps5_render_engine.html">
+                                <div class="project-card">
+                                    <div class="project-card-title-container-row">
+                                        <h6>PS5 Render Engine</h6>
+                                        <div class="projecr-card-skill-container">
+                                            <img src="assets/imgs/logos/c.png" alt="C">
+                                            <img src="assets/imgs/logos/c_plusplus.png" alt="C++">
+                                            <img src="assets/imgs/logos/ps5.png" alt="PS5"
+                                                class="project-card-large-logo">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <img src="assets/imgs/projects/ps5_render_engine/ps5_render_engine_picture.png"
+                                        alt="Free List Allocator">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 new others">
+                        <div class="portfolio-item">
+                            <a href="portfolio/memory_manager.html">
+                                <div class="project-card">
+                                    <div class="project-card-title-container-row">
+                                        <h6>Memory Manager</h6>
+                                        <div class="projecr-card-skill-container">
+                                            <img src="assets/imgs/logos/c.png" alt="C">
+                                            <img src="assets/imgs/logos/c_plusplus.png" alt="C++">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <img src="https://cdn.jsdelivr.net/gh/b0xt/sobyte-images/2021/12/06/cc5496609904447fb8d8e92d2e9f2719.png"
+                                        alt="Free List Allocator">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 new ia unity">
+                        <div class="portfolio-item">
+                            <a href="portfolio/multi_agent_system.html">
+                                <div class="project-card">
+                                    <div class="project-card-title-container-row">
+                                        <h6>Multi Agent System</h6>
+                                        <div class="projecr-card-skill-container">
+                                            <img src="assets/imgs/logos/c_sharp.png" alt="C Sharp">
+                                            <img src="assets/imgs/logos/unity.png" alt="Unity"
+                                                class="project-card-large-logo">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <img src="https://superagi.com/wp-content/uploads/2024/05/Multi-Agent-System.webp"
+                                        alt="Free List Allocator">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 new others">
+                        <div class="portfolio-item">
+                            <a href="portfolio/adts.html">
+                                <div class="project-card">
+                                    <div class="project-card-title-container-row">
+                                        <h6>ADTs</h6>
+                                        <div class="projecr-card-skill-container">
+                                            <img src="assets/imgs/logos/c.png" alt="C">
+                                            <img src="assets/imgs/logos/c_plusplus.png" alt="C++">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <img src="https://media.licdn.com/dms/image/v2/D4E12AQGsHTEnHYvxDg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1695331793048?e=2147483647&v=beta&t=CFFsvtJaEpMdNQ2qKjEvpnrFOanEYbYLYToVkL_E55I"
+                                        alt="Free List Allocator">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="col-md-6 col-lg-4 new others">
+                        <div class="portfolio-item">
+                            <a href="portfolio/several_asm.html">
+                                <div class="project-card">
+                                    <div class="project-card-title-container-row">
+                                        <h6>Several ASM Demos</h6>
+                                        <div class="projecr-card-skill-container">
+                                            <img src="assets/imgs/logos/c.png" alt="C">
+                                            <img src="assets/imgs/logos/assembly.png" alt="ASM">
+
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <img src="data:image/png;base64,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"
+                                        alt="Free List Allocator">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    -->
+                    <!--
                     <div class="col-md-6 col-lg-4 new ia unity">
                         <div class="portfolio-item">
                             <img src="assets/imgs/web-2.jpg" class="img-fluid" alt="Multi Agent System">
@@ -183,7 +300,8 @@
                                 <span>Unity</span>
                             </div>
                         </div>
-                    </div>                   
+                    </div>
+                    -->
                 </div>
             </div>
         </div>
@@ -216,7 +334,7 @@
                     <li><span>Birthdate</span> : 11/14/2003</li>
                     <li><span>Email</span> : <a
                             href="mailto:hector.ochando.casan@gmail.com">hector.ochando.casañ@gmail.com</a></li>
-                   
+
                     <li><span>Address</span> : Valencia, Spain</li>
                 </ul>
                 <ul class="social-icons pt-3">
@@ -246,22 +364,6 @@
                         <hr>
                     </div>
                 </div>
-                <!-- <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-paint-bucket icon-lg"></i></div>
-                    <div class="col-10 ml-auto mr-3">
-                        <h6>Web Development</h6>
-                        <p class="subtitle">Lorem ipsum dolor sit consectetur.</p>
-                        <hr>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-stats-up icon-lg"></i></div>
-                    <div class="col-10 ml-auto mr-3">
-                        <h6>Digital Marketing</h6>
-                        <p class="subtitle">voluptate commodi illo voluptatib.</p>
-                        <hr>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
@@ -374,7 +476,7 @@
         </div>
     </section>
 
-    <div class="section contact" id="contact">
+    <!-- <div class="section contact" id="contact">
         <div id="map" class="map"></div>
         <div class="container">
             <div class="row">
@@ -401,23 +503,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="contact-info-card">
-                        <h4 class="contact-title">Get in touch</h4>
-                        <!-- <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-mobile icon-md"></i>
-                            </div>
-                            <div class="col-10 ">
-                                <h6 class="d-inline">Phone : <br> <span class="text-muted"><a href="tel:+34651565368">(+34) 651 565 368</a></span></h6>
-                            </div>
-                        </div> -->
-                        <!-- <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-map-alt icon-md"></i>
-                            </div>
-                            <div class="col-10">
-                                <h6 class="d-inline">Address :<br> <span class="text-muted">12345 Fake ST NoWhere AB Country.</span></h6>
-                            </div>
-                        </div> -->
+                        <h4 class="contact-title">Get in touch</h4>                       
                         <div class="row mb-2">
                             <div class="col-1 pt-1 mr-1">
                                 <i class="ti-envelope icon-md"></i>
@@ -431,7 +517,7 @@
                         <ul class="social-icons pt-4">
                             <li class="social-item"><a class="social-link text-dark"
                                     href="https://www.linkedin.com/in/hector-ochando/" target="_blank"><i
-                                        class="ti-linkedin" aria-hidden="true"></i></a></li>                            
+                                        class="ti-linkedin" aria-hidden="true"></i></a></li>
                             <li class="social-item"><a class="social-link text-dark" href="#"><i class="ti-github"
                                         aria-hidden="true"></i></a></li>
                         </ul>
@@ -440,7 +526,7 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
     <footer class="footer py-3">
         <div class="container text-center">
             <p class="small mb-0 text-light">
