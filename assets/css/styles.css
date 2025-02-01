@@ -13122,6 +13122,10 @@ a.white:hover {
   max-width: 80px !important;
 }
 
+.project-skill-ps5-logo {
+  max-width: 135px !important;
+}
+
 @media (min-width: 992px) {
   .project-section-skill-container img {
     max-width: 75px;
@@ -13132,6 +13136,10 @@ a.white:hover {
   .project-skill-openal-logo,
   .project-skill-physx-logo {
     max-width: 120px !important;
+  }
+
+  .project-skill-ps5-logo {
+    max-width: 175px !important;
   }
 }
 
