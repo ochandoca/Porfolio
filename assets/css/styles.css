@@ -12647,7 +12647,7 @@ pre .code {
 
 .header {
   position: relative;
-  height: 80vh;
+  height: 60vh;
   min-height: 600px;
   background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/hero.webp);
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/hero.webp);
@@ -13053,6 +13053,23 @@ a.white:hover {
   margin-bottom: 50px;
 }
 
+
+.project-showcase-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 1200px) {
+  .project-showcase-row {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+}
+
+
+
 .project-section {
   color: white;
   background-color: #1f1f1f;
@@ -13126,21 +13143,20 @@ a.white:hover {
   max-width: 135px !important;
 }
 
-@media (min-width: 992px) {
-  .project-section-skill-container img {
-    max-width: 75px;
-    max-height: 75px;
-  }
 
-  .project-skill-opengl-logo,
-  .project-skill-openal-logo,
-  .project-skill-physx-logo {
-    max-width: 120px !important;
-  }
+.project-section-skill-container img {
+  max-width: 75px;
+  max-height: 75px;
+}
 
-  .project-skill-ps5-logo {
-    max-width: 175px !important;
-  }
+.project-skill-opengl-logo,
+.project-skill-openal-logo,
+.project-skill-physx-logo {
+  max-width: 120px !important;
+}
+
+.project-skill-ps5-logo {
+  max-width: 175px !important;
 }
 
 .project-section hr {
@@ -13223,6 +13239,12 @@ a.white:hover {
 .has-cpp-comments-color {
   color: #529949;
   padding: 0;
+}
+
+.has-cpp-function-color {
+  color: #4EAEEF;
+  padding: 0;
+
 }
 
 /* Accordion Camera */
@@ -13360,4 +13382,8 @@ a.white:hover {
   background-color: #2f2f2f;
   text-decoration: none;
   size: 0;
+}
+
+.no-padding {
+  padding: 0px !important;
 }
