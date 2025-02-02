@@ -80,8 +80,25 @@
             <h3>Resume</h3>
             <hr>
             <p>
-
+                This project has developed two demos designed specifically for the ARM processor of a Raspberry Pi 3.
+                The purpose of
+                this work is to learn how to optimise code on a relatively powerful architecture, but with limited
+                resources compared to
+                desktop systems. In addition, the ARM processor offers an accessible instruction set and assembler for
+                learning, which
+                facilitates the exploration of low-level optimisation techniques. Through these demos, different
+                strategies have been
+                experimented to improve performance, such as efficient use of registers and optimisation of memory
+                access.
             </p>
+            <p>The following concepts have been applied for optimisation:</p>
+            <ul>
+                <li>Fixed Point Arithmetic</li>
+                <li>Linearity of Memory Reading/Writing</li>
+                <li>Operation Costs</li>
+                <li>Caches</li>
+                <li>Simplifying the Core Loop(Hot Path)</li>
+            </ul>
         </article>
         <article class="project-section">
             <h2>Landscape</h2>
@@ -96,7 +113,27 @@
                 </article>
                 <article class="project-section">
                     <h3>Work Carried Out</h3>
-                    <p></p>
+                    <p>
+                        In this demo a graphical effect of a landscape drawn with dots has been developed, having to
+                        calculate a plane with
+                        these dots in three dimensions by drawing it on a 2D screen. For this we had to optimise the
+                        calculations to convert 3D
+                        points into 2D. In addition to this, this landscape is drawn thanks to a height map, which
+                        forced to optimise the
+                        reading of the texture of heights.
+                    </p>
+                    <p>
+                        To optimise this effect, techniques such as Fixed Point Arithmetic have been used,
+                        pre-calculating some components of
+                        the point grid such as the Z-value. And also making a good use of the loops, iterating the rows
+                        and not the columns
+                        avoiding to make too big jumps.
+                    </p>
+                    <p>
+                        In addition, this function developed in C has been written to ARM assembler to learn and
+                        understand how the assembler,
+                        compiler and compiler work and to facilitate optimisation when developing algorithms.
+                    </p>
                 </article>
             </div>
             <ul class="accordion_camera">
@@ -107,7 +144,7 @@
                             stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                         </svg>
-                        C Optimised Function</label>
+                        Effect Optimised Function</label>
                     <div class="accordion_content">
                         <div>
                             <pre><code>
@@ -312,7 +349,26 @@ bx lr</code></pre>
                 </article>
                 <article class="project-section">
                     <h3>Work Carried Out</h3>
-                    <p></p>
+                    <p>
+                        This graphic effect presents a number of challenges. This is because it is a raytacing effect
+                        where from a camera, which
+                        cannot change its point of view, you have to throw rays and paint the scene from top to bottom,
+                        this poses many
+                        problems. Especially when painting on screen as it is not sequential.
+                    </p>
+                    <p>
+                        For this, the first thing that has been done is to paint the scene inverted to make the writing
+                        more cahce friendly and
+                        more sequential. In addition to this, as the ect uses a height texture to calculate the
+                        intersection of the ray with the
+                        plane, mips have been made to optimise the access to the texture the further the ray moves away
+                        from the plane.
+                    </p>
+                    <p>Because the texture has been painted inverted, after making the effect, a function has been
+                        developed that rotates one
+                        texture per tile (i.e. portions of this texture). This is done to optimise the use of the map.
+                        And not to have too many
+                        chache miss.</p>
                 </article>
             </div>
             <ul class="accordion_camera">
