@@ -86,11 +86,11 @@
                 with a single
                 memory pool. This allocator is developed to be used in single thread so it does not support multiple
                 threads and
-                therefore does not optimise access at chache line level and does not provide a safe memory allocation.
+                therefore does not optimise access at cache line level and does not provide a safe memory allocation.
             </p>
         </article>
         <article class="project-section">
-            <h2>Memori Manager Development</h2>
+            <h2>Memory Manager Development</h2>
             <hr>
             <p>
                 The memory manager/allocator is based on the management of a previously allocated memory pool. For this
@@ -100,7 +100,7 @@
                 value the information about that pointer, such as the size it occupies.
             </p>
             <p>
-                To reserve memory, the memory manaller looks for a block that is greater than or equal to the requested
+                To reserve memory, the memory manager looks for a block that is greater than or equal to the requested
                 size. If it
                 finds a larger size it splits the block in two, storing one in the freed table and the other in the
                 allocated table and
@@ -113,9 +113,8 @@
                 that is being
                 freed and check to see if it has adjacent blocks that are freed. For the block in front of you, just
                 check to see if my
-                memory address plus my size is free. For the block in front of you, just check to see if my memory
-                address plus my size
-                is free. Once found, check if the memory address plus its size is equal to the memory address you are
+                memory address plus my size is free. Once found, check if the memory address plus its size is equal to
+                the memory address you are
                 trying to free.
             </p>
             <p>
@@ -154,8 +153,8 @@
                 account where the
                 memory is being reserved, as there may be synchronisation of threads if they read or write in nearby
                 positions (within
-                the same chache line).
-                This happens because CPUs do not read a single value from the ram but load a chache the size of a chache
+                the same cache line).
+                This happens because CPUs do not read a single value from the ram but load a cache the size of a cache
                 line (in most
                 cases 64 bytes), at least at the L1 level.
             </p>
