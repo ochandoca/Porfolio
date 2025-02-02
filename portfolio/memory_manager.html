@@ -90,6 +90,39 @@
             </p>
         </article>
         <article class="project-section">
+            <h2>Memori Manager Development</h2>
+            <hr>
+            <p>
+                The memory manager/allocator is based on the management of a previously allocated memory pool. For this
+                purpose, two
+                hash tables have been created where the freed and reserved pointers are stored. Using as a key the
+                pointer and as a
+                value the information about that pointer, such as the size it occupies.
+            </p>
+            <p>
+                To reserve memory, the memory manaller looks for a block that is greater than or equal to the requested
+                size. If it
+                finds a larger size it splits the block in two, storing one in the freed table and the other in the
+                allocated table and
+                returning the pointer. If nothing is found, null is returned.
+            </p>
+            <p>
+                For the freeing of memory it is necessary to make more steps since the big block will be split in
+                multiple small blocks
+                and it is necessary to put them together again. To do this, you take the information from the pointer
+                that is being
+                freed and check to see if it has adjacent blocks that are freed. For the block in front of you, just
+                check to see if my
+                memory address plus my size is free. For the block in front of you, just check to see if my memory
+                address plus my size
+                is free. Once found, check if the memory address plus its size is equal to the memory address you are
+                trying to free.
+            </p>
+            <p>
+                Once this is done, the blocks are put together and stored in the freed list.
+            </p>
+        </article>
+        <article class="project-section">
             <h2>What I have learned</h2>
             <hr>
             <p>
