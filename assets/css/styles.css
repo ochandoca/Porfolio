@@ -12647,16 +12647,25 @@ pre .code {
 
 .header {
   position: relative;
-  height: 60vh;
-  min-height: 600px;
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/hero.webp);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/hero.webp);
-  background-size: cover;
-  background-position: center;
+  height: 30vh;
+  min-height: 300px;
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/banner.png);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/banner.png);
+  background-size: contain;
+  background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #fff;
   border: 1px solid black;
+}
+
+@media (max-width: 1218px) {
+  .header {
+    background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/banner_1.png);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/banner_1.png);
+    background-size: cover;
+    background-position: center -30vh;
+  }
 }
 
 .header .container {
