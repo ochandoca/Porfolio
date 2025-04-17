@@ -12916,6 +12916,7 @@ a.white:hover {
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 10;
 }
 
 .navbar_cv_button {
@@ -13395,4 +13396,95 @@ a.white:hover {
 
 .no-padding {
   padding: 0px !important;
+}
+
+/** Test */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  margin: auto;
+  overflow: hidden;
+  background-color: #2f2f2f;
+  padding: 2px;
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* <-- Esto hace que la imagen NO se recorte */
+  position: absolute;
+  top: 0;
+  left: 100%;
+  opacity: 0;
+  transition: opacity 1.0s ease-in-out;
+  transition: transform 1s ease-in-out;
+  background-color: #000;
+  border-radius: 15px;
+  padding: 2px;
+  /* Opcional: fondo negro para que no se note el espacio sobrante */
+}
+
+.carousel-item.active {
+  opacity: 1;
+  z-index: 1;
+  left: 0;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(47, 47, 47, 0.4);
+  border: none;
+  color: white;
+  padding: 10px, 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel-btn.prev {
+  left: 1vw;
+}
+
+.carousel-btn.next {
+  right: 1vw;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(47, 47, 47, 0.8);
+}
+
+.carousel-dots {
+  text-align: center;
+}
+
+.carousel-dots span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background-color: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #333;
+}
+
+.carousel-dots .active-dot {
+  background-color: #fff;
 }

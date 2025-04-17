@@ -123,6 +123,22 @@
                 </ul>
             </article>
         </div>
+        <!--
+        <article class="project-section">
+            <h2>Gallery</h2>
+            <hr>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="../assets/imgs/advertising-1.jpg" class="carousel-item active" alt="Screenshot 1">
+                    <img src="../assets/imgs/advertising-2.jpg" class="carousel-item" alt="Screenshot 2">
+                    <img src="../assets/imgs/advertising-3.jpg" class="carousel-item" alt="Screenshot 3">
+                </div>
+                <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </article>
+        -->
         <article class="project-section">
             <h2>Game Development</h2>
             <hr>
@@ -186,7 +202,27 @@
     <!-- core  -->
     <script src="../assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="../assets/js/carousel.js"></script>
+    <!-- 
+    <script>
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
 
+        function showSlide(index) {
+            items.forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+        }
+
+        function moveSlide(step) {
+            currentIndex = (currentIndex + step + items.length) % items.length;
+            showSlide(currentIndex);
+        }
+
+        // Inicial
+        showSlide(currentIndex);
+    </script>
+bootstrap 3 affix -->
     <!-- bootstrap 3 affix -->
     <!-- <script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script> -->
 
