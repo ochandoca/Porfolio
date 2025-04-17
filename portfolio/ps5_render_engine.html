@@ -109,16 +109,86 @@
                 </p>
                 <p>Renderer Features:</p>
                 <ul>
-                    <li>Mesh rendering using <b>instancing</b> and <b>bindless resources</b> such as textures.</li>
-                    <li>Grass system, with steps of the players and wind</li>
-                    <li>Deffered rendering with depth prepass</li>
-                    <li>Full <b>PBR lighting</b> with <b>shadows</b></li>
-                    <li>Skeletal Animations Rendering</li>
-                    <li>SkySphere</li>
-                    <li>Text 2D and 3D (bilboard)</li>
+                    <li>Mesh rendering using instancing and bindless texture resources.</li>
+                    <li>🌿 Interactive grass system reacting to wind and player footsteps.</li>
+                    <li>Deferred rendering pipeline with depth prepass optimization.</li>
+                    <li>💡 Full PBR lighting model with real-time shadows.</b></li>
+                    <li>🦴 Skeletal animation support for animated characters.</li>
+                    <li>🌌 Skysphere.</li>
+                    <li>🔤 2D and 3D text rendering, including billboard text in 3D space.</li>
+                    <li>🔊 3D audio system that runs on a separate thread to ensure smooth and responsive audio
+                        playback.</li>
+                    <li>🧱 Integrated physics engine with collision detection and rigidbody dynamics.</li>
+                    <li>🎮 Built-in systems for custom gameplay logic creation directly within the engine.</li>
                 </ul>
             </article>
         </div>
+        <!--
+        <article class="project-section">
+            <h2>Gallery</h2>
+            <hr>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="../assets/imgs/advertising-1.jpg" class="carousel-item active" alt="Screenshot 1">
+                    <img src="../assets/imgs/advertising-2.jpg" class="carousel-item" alt="Screenshot 2">
+                    <img src="../assets/imgs/advertising-3.jpg" class="carousel-item" alt="Screenshot 3">
+                </div>
+                <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </article>
+        -->
+        <article class="project-section">
+            <h2>Game Development</h2>
+            <hr>
+            <p>
+                A cooperative puzzle-platformer game was developed as a technical showcase for the engine.
+                Designed for two players on shared screen, the game highlights the versatility of the engine’s core
+                systems by
+                offering asymmetric gameplay mechanics and a variety of interactive elements that encourage teamwork and
+                problem-solving.
+            </p>
+            <p>Gameplay Systems and Features:</p>
+            <ul>
+                <li>🎮 Two-player cooperative gameplay on a single screen with distinct character abilities.</li>
+                <li>🕳️ One character can dig through specific surfaces and spawn a clone to place on pressure plates.
+                </li>
+                <li>🪶 The other character can fly for a limited time, allowing traversal over short walls and adding
+                    verticality to puzzle design.</li>
+                <li>🧠 Puzzle elements include pressure plates (single-use, multi-plate, and hold-to-activate), levers,
+                    and
+                    physics-based objects.</li>
+                <li>🚪 Doors react to dynamic logic conditions based on puzzle states and player interactions.</li>
+                <li>🧱 Full integration with the physics engine for object interaction, including pickup and placement
+                    mechanics.</li>
+                <li>📦 Scene system supports level construction with serialized entities and interactive triggers.</li>
+                <li>🛠️ Custom gameplay logic handled via modular systems designed directly in the engine.</li>
+            </ul>
+        </article>
+        <article class="project-section">
+            <h2>Platform Deployment</h2>
+            <hr>
+            <p>
+                A custom packaging system was developed to bundle the game and all necessary assets into a deployable
+                format.
+                This allowed the game to be properly packaged and installed on a PlayStation 5 development kit, enabling
+                real
+                hardware testing and performance validation.
+            </p>
+            <p>Deployment Features:</p>
+            <ul>
+                <li>📦 Packaging system to automatically collect assets, engine binaries, and metadata into a structured
+                    build
+                    format.</li>
+                <li>🕹️ Successful deployment and execution on PlayStation 5 development hardware using
+                    platform-specific SDK
+                    tools.</li>
+                <li>🧪 Real hardware validation allowed for framerate testing, input latency evaluation, and GPU-side
+                    debugging.
+                </li>
+            </ul>
+        </article>
     </article>
     <footer class="footer py-3 footer_portfolio">
         <div class="container text-center">
@@ -132,7 +202,27 @@
     <!-- core  -->
     <script src="../assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="../assets/js/carousel.js"></script>
+    <!-- 
+    <script>
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
 
+        function showSlide(index) {
+            items.forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+        }
+
+        function moveSlide(step) {
+            currentIndex = (currentIndex + step + items.length) % items.length;
+            showSlide(currentIndex);
+        }
+
+        // Inicial
+        showSlide(currentIndex);
+    </script>
+bootstrap 3 affix -->
     <!-- bootstrap 3 affix -->
     <!-- <script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script> -->
 
