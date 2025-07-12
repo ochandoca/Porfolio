@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(() => {
         moveSlide(1);
-    }, 3000);
+    }, 25000);
 
     showSlide(currentIndex);
 });
