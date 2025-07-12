@@ -13406,9 +13406,7 @@ a.white:hover {
   height: 400px;
   margin: auto;
   overflow: hidden;
-  background-color: #2f2f2f;
   padding: 2px;
-  border-radius: 15px;
   z-index: 1;
 }
 
@@ -13429,8 +13427,6 @@ a.white:hover {
   opacity: 0;
   transition: opacity 1.0s ease-in-out;
   transition: transform 1s ease-in-out;
-  background-color: #000;
-  border-radius: 15px;
   padding: 2px;
   /* Opcional: fondo negro para que no se note el espacio sobrante */
 }
