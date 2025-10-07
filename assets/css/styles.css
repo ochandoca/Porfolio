@@ -13089,6 +13089,34 @@ a.white:hover {
   border-radius: 15px;
 }
 
+.project-examples-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+
+}
+
+.project-examples-container img {
+  max-width: 100%;
+  flex: 0 1 auto;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .project-examples-container {
+    flex-direction: row;
+  }
+
+  .project-examples-container img {
+    max-width: calc(50% - 10px);
+    flex: 0 1 auto;
+    height: auto;
+  }
+}
 
 .project-section-title-container {
   display: flex;
