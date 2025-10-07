@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with JohnDoe landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Héctor Ochando Landing page</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="../assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + JohnDoe main styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <nav class="navbar sticky-top affix navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+        <div class="navbar_container">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar_flex">
+                    <div class="navbar_display">
+                        <ul class="navbar-nav brand">
+                            <img src="../assets/imgs/avatar.jpg" alt="" class="brand-img">
+                            <li class="brand-txt">
+                                <h5 class="brand-title">Héctor Ochando Casañ</h5>
+                                <div class="brand-subtitle">Software Engineer</div>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <a href="../cv_hector_ochando_web.pdf" download
+                                class="btn btn-primary btn-rounded navbar_cv_button" target="_blank"><i
+                                    class="ti-download pr-2"></i>CV</a>
+                            <ul class="social-icons aling-center">
+                                <li class="social-item"><a class="social-link"
+                                        href="https://www.linkedin.com/in/hector-ochando/" target="_blank"><i
+                                            class="ti-linkedin" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a class="social-link" href="https://github.com/ochandoca"
+                                        target="_blank"><i class="ti-github" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="navbar_nav_buttons">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"></li>
+                            <a href="../index.html#home" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item"></li>
+                            <a href="../index.html#portfolio" class="nav-link">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../index.html#about" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item"></li>
+                            <a href="../index.html#resume" class="nav-link">Resume</a>
+                            </li>
+                            <li class="nav-item last-item">
+                                <a href="../index.html#contact" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <article class="project-container">
+        <article class="project-section">
+            <div class="project-section-title-container">
+                <h1>Everfrost Engine</h1>
+                <div class="project-section-skill-container">
+                    <img src="../assets/imgs/logos/c_plusplus.png" alt="C++">
+                    <img src="../assets/imgs/logos/directx12.png" alt="DirectX 12">
+                </div>
+            </div>
+            <h3>Resume</h3>
+            <hr>
+            <p>
+                Everfrost Engine is a work-in-progress project focused on modern graphics and engine systems programming. It explores techniques such as Visibility Buffer rendering, RHI-based API abstraction (DX12 now), bindless resources, and memory footprint optimizations, with integration of the Optick profiler as an additional tool for performance analysis.
+            </p>
+        </article>
+        <div class="project-showcase-row project-section">
+            <article class="project-section">
+                <h2>Showcase</h2>
+                <hr>
+                <p>Not Yet!</p>
+            </article>
+            <article class="project-section">
+                <h2>Work Carried Out</h2>
+                <hr>
+                <p>
+                    In the development of Everfrost Engine, extensive work was carried out on modern graphics and engine systems programming. Key tasks included implementing a Visibility Buffer rendering pipeline, designing a Render Hardware Interface (RHI) abstraction layer for DirectX 12, and integrating bindless resource management to improve GPU efficiency. Memory footprint optimizations were applied throughout the engine, and the Optick profiler was integrated to enable detailed performance analysis. The project served as a practical exploration of advanced rendering techniques and low-level engine architecture.
+                </p>
+            </article>
+        </div>
+        <article class="project-section">
+            <h2>Memory Footprint Optimization for Meshes</h2>
+            <hr>
+            <p>
+                In Everfrost Engine, all memory associated with a mesh is organized in a single contiguous buffer on the GPU. This buffer follows a fixed order: first, the vertex positions are stored, followed by the mesh index, and then the rest of the necessary vertex information, such as normals, tangents, UV coordinates, and colors. This structure ensures efficient GPU access, improves cache coherence, and minimizes memory fragmentation, enabling faster rendering operations and better memory utilization.
+            </p>
+            <h4>Vertex Positions</h4>
+            <p>Positions can be stored in three main formats:</p>
+            <ul>
+                <li><code>XYZW16_UNORM</code>: Position compressed into 16 bits per normalized component, along with an additional fixed W value. This format significantly reduces memory consumption and GPU bandwidth, suitable for meshes with moderate precision. This format requires UNORM remap.</li>
+                <li><code>XYZ32_FLOAT</code>: Positions in 32 bits per component (X, Y, Z). Maintains high precision for complex geometries without compression.</li>
+                <li><code>XYZW32_FLOAT</code>: Extended version with a fourth W component, which can be used for additional data or for future vertex shading operations.</li>
+            </ul>
+            <!-- accordion -->
+            <ul class="accordion_camera">
+                <li>
+                    <input type="checkbox" name="accordion" id="accordion_vertex_positions_struct_label">
+                    <label for="accordion_vertex_positions_struct_label">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                        Vertex Positions Structs</label>
+                    <div class="accordion_content">
+                        <div>
+                            <pre><code><mark class="has-cpp-keyword-color">struct</mark> <mark class="has-cpp-type-color">XYZW16_UNORM</mark>
+{
+    <mark class="has-cpp-type-color">uint16</mark> x;
+    <mark class="has-cpp-type-color">uint16</mark> y;
+    <mark class="has-cpp-type-color">uint16</mark> z;
+    <mark class="has-cpp-type-color">uint16</mark> w;
+};
+
+<mark class="has-cpp-keyword-color">struct</mark> <mark class="has-cpp-type-color">XYZ32_FLOAT</mark>
+{
+    <mark class="has-cpp-type-color">float</mark> x;
+    <mark class="has-cpp-type-color">float</mark> y;
+    <mark class="has-cpp-type-color">float</mark> z;
+};
+
+<mark class="has-cpp-keyword-color">struct</mark> <mark class="has-cpp-type-color">XYZW32_FLOAT</mark>
+{
+    <mark class="has-cpp-type-color">float</mark> x;
+    <mark class="has-cpp-type-color">float</mark> y;
+    <mark class="has-cpp-type-color">float</mark> z;
+    <mark class="has-cpp-type-color">float</mark> w;
+};</code></pre>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <h4>Vertex indices</h4>
+            <p>The index buffer is stored immediately after the positions and can have two formats:</p>
+            <ul>
+                <li><code>uint16</code>: for meshes with fewer than 65,536 vertices, reducing memory consumption by half compared to 32 bits.</li>
+                <li><code>uint32</code>: for large meshes that exceed the 16-bit limit, ensuring compatibility with complex geometries.</li>
+            </ul>
+            <h4>Normal and Tangents</h4>
+            <p>These components, necessary for lighting and shading, are also stored flexibly according to the desired precision:</p>
+            <ul>
+                <li><code>XYZW8_SNORM</code>: each component occupies 8 normalized bits, sufficient for approximate lighting details, reducing the memory footprint.</li>
+                <li><code>XYZW16_SNORM</code>: 16 bits per component, balancing precision and memory size.</li>
+                <li><code>XYZW32_FLOAT</code>: maximum precision with 32 bits per component, useful for models where shading accuracy is critical.</li>
+            </ul>
+            <!-- accordion -->
+            <ul class="accordion_camera">
+                <li>
+                    <input type="checkbox" name="accordion" id="accordion_vertex_normals_structs_label">
+                    <label for="accordion_vertex_normals_structs_label">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                        Vertex Normal and Tangents Structs</label>
+                    <div class="accordion_content">
+                        <div>
+                            <pre><code><mark class="has-cpp-keyword-color">struct</mark> <mark class="has-cpp-type-color">XYZW8_SNORM</mark>
+{
+    <mark class="has-cpp-type-color">int8</mark> x;
+    <mark class="has-cpp-type-color">int8</mark> y;
+    <mark class="has-cpp-type-color">int8</mark> z;
+    <mark class="has-cpp-type-color">int8</mark> w;
+};
+
+<mark class="has-cpp-keyword-color">struct</mark> <mark class="has-cpp-type-color">XYZW16_SNORM</mark>
+{
+    <mark class="has-cpp-type-color">int16</mark> x;
+    <mark class="has-cpp-type-color">int16</mark> y;
+    <mark class="has-cpp-type-color">int16</mark> z;
+    <mark class="has-cpp-type-color">int16</mark> w;
+};
+
+<mark class="has-cpp-keyword-color">struct</mark> <mark class="has-cpp-type-color">XYZW32_FLOAT</mark>
+{
+    <mark class="has-cpp-type-color">float</mark> x;
+    <mark class="has-cpp-type-color">float</mark> y;
+    <mark class="has-cpp-type-color">float</mark> z;
+    <mark class="has-cpp-type-color">float</mark> w;
+};</code></pre>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <h4>UV Coordinates</h4>
+            <p>The UVs of the first texture set can also be compressed, (this compression requires UNORM remap):</p>
+            <ul>
+                <li><code>XY16_UNORM</code>: 16 bits per component, suitable for standard texture maps with minimal loss of precision.</li>
+                <li><code>XY32_UNORM</code>: 32 bits per component, used when greater precision is required in textures or for large surfaces.</li>
+            </ul>
+            <!-- accordion -->
+            <ul class="accordion_camera">
+                <li>
+                    <input type="checkbox" name="accordion" id="accordion_vertex_uv_structs_label">
+                    <label for="accordion_vertex_uv_structs_label">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                        UV Coordinates Structs</label>
+                    <div class="accordion_content">
+                        <div>
+                            <pre><code><mark class="has-cpp-keyword-color">struct</mark> <mark class="has-cpp-type-color">XY16_UNORM</mark>
+{
+    <mark class="has-cpp-type-color">int16</mark> x;
+    <mark class="has-cpp-type-color">int16</mark> y;
+};
+
+<mark class="has-cpp-keyword-color">struct</mark> <mark class="has-cpp-type-color">XY32_UNORM</mark>
+{
+    <mark class="has-cpp-type-color">float</mark> x;
+    <mark class="has-cpp-type-color">float</mark> y;
+};</code></pre>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <p>
+                A capture of the mesh GPU buffer of the classic Damaged Helmet without the optimization and the full optimization:
+            </p>
+            <div class="project-examples-container">
+                <img src="../assets/imgs/projects/everfrost_engine/memory_footprint_optimization_before.png" alt="Memory Footprint Optimization Before">
+                <img src="../assets/imgs/projects/everfrost_engine/memory_footprint_optimization_after.png" alt="Memory Footprint Optimization After">
+            </div>
+        </article>
+        <article class="project-section">
+            <h2>Visibility Buffer Rendering</h2>
+            <hr>
+            <p>
+                The Visibility Buffer in Everfrost Engine is designed as an optimization layer for G-Buffer generation.
+Instead of directly writing all material and geometric attributes to multiple render targets during the geometry pass, the engine first records a compact visibility representation of the scene. This visibility information is later used to defer G-Buffer construction, drastically reducing overdraw and bandwidth usage, particularly beneficial in scenes containing a high number of small triangles.
+            </p>
+            <h4>How It Works</h4>
+            <p>
+                During the visibility pass, each rasterized pixel outputs a pair of tightly packed 32-bit integers that uniquely identify the visible surface:
+                <ul>
+                    <li><code>uint32 primitiveId</code>: Stores <code>primitiveIndex + 1</code>, where <code>0</code> represents an invalid primitive.</li>
+                    <li><code>uint32 instanceSectionId</code>: Encodes both the instance and section information into a single integer</li>
+                </ul>
+            </p>
+            <div class="project-examples-container">
+                <img src="../assets/imgs/projects/everfrost_engine/visibility_buffer.png" alt="Primitve Id Render Target">
+            </div>
+            <h4>Deferred G-Buffer Construction</h4>
+            <p>
+                Once the visibility pass is complete, the engine performs a deferred G-Buffer generation pass with a compute shader.
+Each pixel’s identifiers are read from the visibility buffer, and the corresponding vertex data (positions, normals, tangents, UVs, colors, and material parameters) are fetched from structured GPU buffers.
+            </p>
+            <p>
+                This process effectively reconstructs the G-Buffer only for visible surfaces, avoiding redundant shading or memory writes for occluded geometry. The result is a standard G-Buffer ready for lighting and post-processing, but built with significantly lower rasterization cost.
+            </p>
+            <div class="project-examples-container">
+                <img src="../assets/imgs/projects/everfrost_engine/g_buffer_normals.png" alt="G-Buffer Normals Render Target">
+            </div>
+        </article>
+    </article>
+    <footer class="footer py-3 footer_portfolio">
+        <div class="container text-center">
+            <p class="small mb-0 text-light">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> Héctor Ochando Casañ</span></a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- core  -->
+    <script src="../assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+    <!-- <script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script> -->
+
+    <!-- Isotope  -->
+    <!-- <script src="assets/vendors/isotope/isotope.pkgd.js"></script>     -->
+
+    <!-- App js -->
+    <!-- <script src="../assets/js/app.js"></script> -->
+
+</body>
+
+</html>

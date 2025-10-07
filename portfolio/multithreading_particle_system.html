@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with JohnDoe landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Héctor Ochando Landing page</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="../assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + JohnDoe main styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <nav class="navbar sticky-top affix navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+        <div class="navbar_container">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar_flex">
+                    <div class="navbar_display">
+                        <ul class="navbar-nav brand">
+                            <img src="../assets/imgs/avatar.jpg" alt="" class="brand-img">
+                            <li class="brand-txt">
+                                <h5 class="brand-title">Héctor Ochando Casañ</h5>
+                                <div class="brand-subtitle">Software Engineer</div>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <a href="../cv_hector_ochando_web.pdf" download
+                                class="btn btn-primary btn-rounded navbar_cv_button" target="_blank"><i
+                                    class="ti-download pr-2"></i>CV</a>
+                            <ul class="social-icons aling-center">
+                                <li class="social-item"><a class="social-link"
+                                        href="https://www.linkedin.com/in/hector-ochando/" target="_blank"><i
+                                            class="ti-linkedin" aria-hidden="true"></i></a></li>
+                                <li class="social-item"><a class="social-link" href="https://github.com/ochandoca"
+                                        target="_blank"><i class="ti-github" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="navbar_nav_buttons">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"></li>
+                            <a href="../index.html#home" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item"></li>
+                            <a href="../index.html#portfolio" class="nav-link">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../index.html#about" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item"></li>
+                            <a href="../index.html#resume" class="nav-link">Resume</a>
+                            </li>
+                            <li class="nav-item last-item">
+                                <a href="../index.html#contact" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <article class="project-container">
+        <article class="project-section">
+            <div class="project-section-title-container">
+                <h1>Multithreaded Particle System</h1>
+                <div class="project-section-skill-container">
+                    <img src="../assets/imgs/logos/c_plusplus.png" alt="C++">
+                </div>
+            </div>
+            <h3>Resume</h3>
+            <hr>
+            <p>
+                Built a C++ multithreaded particle system where particles update life, position, and collisions in real time using a task-based architecture, with performance measured and analyzed using the Tracy profiler. More info here.
+            </p>
+        </article>
+        <div class="project-showcase-row project-section">
+            <article class="project-section">
+                <h2>Showcase</h2>
+                <hr>
+                <iframe id="video" src="https://www.youtube.com/embed/hG3v5Ku2lnU" 
+                    title="Multithreaded Particle System" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen></iframe>
+            </article>
+            <article class="project-section">
+                <h2>Work Carried Out</h2>
+                <hr>
+                <p>
+                    I designed and developed a C++ multithreaded particle system built around a task-based architecture. The system updates particle life, position, and collisions in real time, efficiently distributing work across multiple threads to maximize performance and scalability.
+                </p>
+                <p>During development, I focused on data-oriented design principles and efficient workload scheduling to achieve smooth simulation at high particle counts. Performance and timing metrics were continuously analyzed using the Tracy profiler to ensure optimal execution and minimal overhead.</p>
+                <p>The specific functionalities I developed include:</p>
+                <ul>
+                    <li>Task-Based Architecture</li>
+                    <li>Parallel Updates, Collision Handling and Spatial Partitioning</li>
+                    <li>Real-Time Particle Simulation and Rendering Integration</li>
+                    <li>Performance Profiling and Optimization using Tracy</li>
+                </ul>
+            </article>
+        </div>
+        <article class="project-section">
+            <h2>Multithreaded Particle System</h2>
+            <hr>
+            <p>
+                One of the main objectives of this project was to design and implement a parallel particle simulation system capable of updating particle life, position, and collisions in real time while maintaining optimal CPU performance. The system was developed in C++ using a task-based multithreading architecture, designed to distribute workloads efficiently across all available cores.
+            </p>
+            <p>
+                This architecture allows thousands of particles to be processed simultaneously, reducing frame time and improving scalability. Each simulation step is divided into small jobs that are dispatched to worker threads through a custom Job System, ensuring smooth execution and minimal synchronization overhead.
+            </p>
+            <p>
+                In addition, the system integrates the Tracy profiler to analyze timing and workload distribution, enabling real-time performance tracking and continuous optimization of memory access patterns and thread utilization.
+            </p>
+            <div class="project-examples-container">
+                <img src="../assets/imgs/projects/miltithreaded_particle_system/tracy_1.png" alt="Tracy Capture 1">
+                <img src="../assets/imgs/projects/miltithreaded_particle_system/tracy_2.png" alt="Tracy Capture 2">
+                <img src="../assets/imgs/projects/miltithreaded_particle_system/spatial_partition_example.png" alt="Spatial Partition Example">
+            </div>
+            <p>
+                In these screenshots taken from the program using Tracy, we can see how the particles are being updated in the blue box, i.e., updating their position in relation to their speed, as well as placing them in one of the divisions of space to optimize the calculation of collisions. After that, in the red box, we can see how the collisions of the particles are being made, taking advantage of these spatial partitions.
+            </p>
+            <p>
+                With regard to the main thread, we can see how an early draw is being performed in the purple box, which consists of painting the particles that have already been completely updated instead of waiting for all of them to finish. Then the late draw is performed, where the rest of the particles are painted once their update has been completely finished.
+            </p>
+            <p>
+                In this demo, we can see that painting the particles takes a long time. A small optimization we could have made is to do a multi-frame update, that is, once we have finished updating all the particles, we could update the next frame while painting the ones in this frame.
+            </p>
+            
+        </article>
+        <article class="project-section">
+            <h2>Job System Architecture</h2>
+            <hr>
+            <p>
+                At the core of the particle simulation lies the Job System, a lightweight and lock-less task scheduler designed for high concurrency. While not entirely lock-free, it achieves minimal contention through the careful use of spinlocks and read/write locks, ensuring efficient synchronization even under heavy workloads.
+            </p>
+            <h4>Job Declaration</h4>
+            <p>
+                Each job is defined as a <code>std::function&lt;void()&gt;</code>, allowing flexible encapsulation of any piece of work — from particle updates to collision checks — without rigid task definitions.
+            </p>
+            <h4>Thread Pool</h4>
+            <p>
+                Upon initialization, the system spawns one worker thread per logical processor minus one, reserving a core for the main thread. Each worker thread runs a persistent loop that waits for new jobs to be added to the shared queue.
+To maximize CPU cache locality and reduce context switching, each worker is assigned an affinity mask binding it to a specific logical core. The shared job queue is protected using spinlocks, providing lightweight synchronization suitable for very short critical sections.
+            </p>
+            <h4>Atomic Counters</h4>
+            <p>
+                Every group of dispatched jobs is associated with an atomic counter that tracks the number of active tasks. When a worker completes a job, it atomically decrements the counter, providing a fast, lock-less mechanism to signal progress. Read/write locks are used where necessary to manage counter lifecycle and prevent race conditions during allocation or freeing.
+            </p>
+        </article>
+    </article>
+    <footer class="footer py-3 footer_portfolio">
+        <div class="container text-center">
+            <p class="small mb-0 text-light">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> Héctor Ochando Casañ</span></a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- core  -->
+    <script src="../assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+    <!-- <script src="../assets/vendors/bootstrap/bootstrap.affix.js"></script> -->
+
+    <!-- Isotope  -->
+    <!-- <script src="assets/vendors/isotope/isotope.pkgd.js"></script>     -->
+
+    <!-- App js -->
+    <!-- <script src="../assets/js/app.js"></script> -->
+
+</body>
+
+</html>
